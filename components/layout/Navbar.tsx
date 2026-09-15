@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const navItems = [
+const navigation = [
   { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
@@ -12,15 +12,22 @@ export default function Navbar() {
     <header className="site-header">
       <nav className="navbar">
         <Link href="/" className="brand">
-          SHUBHAM.K
+          SHUBHAM KAUSHIK
         </Link>
 
-        <div className="nav-links">
-          {navItems.map((item) => (
-            <Link key={item.label} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
+        <div className="navbar-right">
+          <div className="nav-links">
+            {navigation.map((item) => (
+              <Link key={item.label} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          <a className="resume-button" href="/resume.pdf" download>
+            <span>Résumé</span>
+            <span className="resume-icon">↓</span>
+          </a>
         </div>
       </nav>
     </header>
