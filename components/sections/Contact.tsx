@@ -133,14 +133,7 @@ export default function Contact() {
           {/* CONTACT LINKS */}
 
           <div className="contact-links">
-            <a
-              className="contact-link contact-link-primary"
-              href="mailto:shubham24065@gmail.com"
-            >
-              <span className="contact-link-icon">✉</span>
-              <span>Email me</span>
-              <span className="contact-link-arrow">→</span>
-            </a>
+            
 
             <a
               className="contact-link"
@@ -159,8 +152,15 @@ export default function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              <span className="contact-github-icon">●</span>
-              <span>GitHub</span>
+              <svg
+  viewBox="0 0 24 24"
+  className="contact-github-svg"
+  aria-hidden="true"
+>
+  <path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.71 5.38-5.29 5.67.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
+</svg>
+
+<span>GitHub</span>
               <span className="contact-link-arrow">↗</span>
             </a>
           </div>
@@ -179,36 +179,79 @@ export default function Contact() {
 
           {/* SYSTEM VISUAL */}
 
-          <div className="contact-visual">
-            <div className="contact-visual-grid" />
+          {/* SYSTEM VISUAL */}
 
-            <div className="contact-node contact-node-email">
-              <span>✉</span>
-            </div>
+<div className="contact-visual">
+  <div className="contact-visual-grid" />
 
-            <div className="contact-node contact-node-github">
-              <span>GH</span>
-            </div>
+  {/* Decorative raised blocks */}
+  <span className="visual-block visual-block-1" />
+  <span className="visual-block visual-block-2" />
+  <span className="visual-block visual-block-3" />
+  <span className="visual-block visual-block-4" />
+  <span className="visual-block visual-block-5" />
 
-            <div className="contact-node contact-node-linkedin">
-              <span>in</span>
-            </div>
+  {/* Connection lines */}
+  <svg
+    className="contact-network-lines"
+    viewBox="0 0 700 330"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path d="M350 110 L180 230" />
+    <path d="M350 110 L500 230" />
+    <path d="M180 230 L350 110 L500 230" />
+  </svg>
 
-            <span className="contact-path path-one" />
-            <span className="contact-path path-two" />
+  {/* Email */}
+  <div className="contact-node contact-node-email">
+    <div className="contact-node-face">
+      <svg
+        viewBox="0 0 24 24"
+        className="contact-node-svg"
+        aria-hidden="true"
+      >
+        <path d="M3 6.5h18v11H3z" />
+        <path d="m3.5 7 8.5 6 8.5-6" />
+      </svg>
+    </div>
+  </div>
 
-            <div className="contact-visual-copy">
-              SOFTWARE
-              <br />
-              DATA
-              <br />
-              SYSTEMS
-              <br />
-              PEOPLE
-              <br />
-              <strong>REAL IMPACT</strong>
-            </div>
-          </div>
+  {/* GitHub */}
+  <div className="contact-node contact-node-github">
+    <div className="contact-node-face">
+      <svg
+        viewBox="0 0 24 24"
+        className="contact-node-svg contact-node-svg-fill"
+        aria-hidden="true"
+      >
+        <path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.71 5.38-5.29 5.67.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
+      </svg>
+    </div>
+  </div>
+
+  {/* LinkedIn */}
+  <div className="contact-node contact-node-linkedin">
+    <div className="contact-node-face">
+      <svg
+        viewBox="0 0 24 24"
+        className="contact-node-svg contact-node-svg-fill"
+        aria-hidden="true"
+      >
+        <path d="M5.37 3.5A2.37 2.37 0 1 1 .63 3.5a2.37 2.37 0 0 1 4.74 0ZM.94 7.1h4.74V22H.94V7.1Zm7.64 0h4.54v2.04h.06c.63-1.2 2.18-2.47 4.49-2.47 4.8 0 5.69 3.16 5.69 7.27V22h-4.73v-7.14c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V22H8.58V7.1Z" />
+      </svg>
+    </div>
+  </div>
+
+  {/* Copy */}
+  <div className="contact-visual-copy">
+    <span>SOFTWARE</span>
+    <span>DATA</span>
+    <span>SYSTEMS</span>
+    <span>PEOPLE</span>
+    <strong>REAL IMPACT</strong>
+  </div>
+</div>
         </div>
 
         {/* =====================================================
@@ -415,29 +458,31 @@ export default function Contact() {
           <a href="#contact">Contact</a>
         </nav>
 
-        <div className="contact-footer-socials">
-          <a href="mailto:shubham24065@gmail.com" aria-label="Email">
-            ✉
-          </a>
+        <div className="footer-socials">
+  <a
+    href="https://www.linkedin.com/in/shubham-sharma-1650a2310/"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="LinkedIn"
+  >
+    <span className="footer-linkedin-icon">in</span>
+  </a>
 
-          <a
-            href="https://www.linkedin.com/in/shubham-sharma-1650a2310/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            in
-          </a>
-
-          <a
-            href="https://github.com/Shubham24065"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            GH
-          </a>
-        </div>
+  <a
+    href="https://github.com/Shubham24065"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="GitHub"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      className="footer-github-icon"
+      aria-hidden="true"
+    >
+      <path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.71 5.38-5.29 5.67.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
+    </svg>
+  </a>
+</div>
 
         <div className="contact-footer-meta">
           <span>© 2026 Shubham Kaushik</span>

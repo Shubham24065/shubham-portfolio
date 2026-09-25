@@ -6,12 +6,16 @@ const capabilityGroups = [
       "Designing, querying and working with structured application data.",
     skills: [
       "SQL Server",
+      "PostgreSQL",
+      "IBM Db2",
       "T-SQL",
       "Database Design",
       "Relational Modeling",
-      "Joins & CTEs",
-      "Transactions",
-    ],
+      "Joins, CTEs & Subqueries",
+      "Views & Stored Procedures",
+      "Indexes & Optimization",
+      "Transactions & ACID"
+      ],
   },
   {
     number: "02",
@@ -19,12 +23,16 @@ const capabilityGroups = [
     description:
       "Turning structured data into useful insights and business information.",
     skills: [
-      "SQL Analysis",
-      "Aggregations",
-      "Business Reporting",
-      "Data Validation",
+      "Power BI",
+      "Power Query",
+      "DAX",
       "Excel",
-      "Analytical Queries",
+      "SQL Analysis",
+      "Data Cleaning & Validation",
+      "Business Reporting",
+      "Data Visualization",
+      "Dashboard Development",
+      "Analytical Queries"
     ],
   },
   {
@@ -34,11 +42,15 @@ const capabilityGroups = [
       "Supporting applications, investigating issues and improving workflows.",
     skills: [
       "Application Support",
-      "Troubleshooting",
+      "Technical Troubleshooting",
       "REST APIs",
       "JSON",
       "Postman",
+      "SQL Troubleshooting",
+      "Incident Investigation",
       "Process Improvement",
+      "Git / GitHub",
+      "IBM i Fundamentals"
     ],
   },
   {
@@ -47,12 +59,16 @@ const capabilityGroups = [
     description:
       "Building, testing and maintaining applications and technical projects.",
     skills: [
-      "Git / GitHub",
+      "Next.js",
+      "React",
+      "TypeScript",
       "JavaScript",
-      "Web Development",
-      "Firebase",
-      "Firestore",
+      "Node.js",
+      "Git / GitHub",
       "VS Code",
+      "REST APIs",
+      "Resend",
+      "Vercel"
     ],
   },
 ];
@@ -158,10 +174,7 @@ ORDER BY total_revenue DESC;`}
             </div>
 
             <div className="capability-visual-copy">
-              <span>BUILD</span>
-              <span>QUERY</span>
-              <span>ANALYZE</span>
-              <span>IMPROVE</span>
+              BUILD · QUERY · ANALYZE · IMPROVE
             </div>
 
             <div className="capability-quote">

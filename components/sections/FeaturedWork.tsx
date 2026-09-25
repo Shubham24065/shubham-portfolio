@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type ProjectStatus = "Completed" | "In Development" | "Planned";
+type ProjectStatus = "Active" | "Completed" | "In Development" | "Planned";
 
 type Project = {
   number: string;
@@ -10,14 +10,25 @@ type Project = {
   status: ProjectStatus;
   technologies: string[];
   href?: string;
-  preview: "northstar" | "campus" | "locked";
+  preview: "northstar" | "portfolio" | "locked";
 };
 
 const projects: Project[] = [
   {
     number: "01",
+    category: "FULL STACK / WEB",
+    title: "Developer Portfolio",
+    description:
+      "Production portfolio engineered as a full-stack web application to present software, data, systems, and technical work through structured, interactive case studies.",
+    status: "Active",
+    technologies: ["Next.js", "React", "TypeScript", "Resend", "Vercel"],
+    href: "/projects/developer-portfolio",
+    preview: "portfolio",
+  },
+  {
+    number: "02",
     title: "Northstar Retail",
-    category: "Data / SQL",
+    category: "DATA / SQL",
     description:
       "SQL business operations simulation for a fictional e-commerce company. Built analytical reporting, customer insights and inventory risk analysis.",
     status: "Completed",
@@ -31,20 +42,9 @@ const projects: Project[] = [
     preview: "northstar",
   },
   {
-    number: "02",
-    title: "CampusConnect",
-    category: "Full Stack",
-    description:
-      "Campus event management platform with authentication, event listings and an admin dashboard for students and clubs.",
-    status: "Completed",
-    technologies: ["React", "Node.js", "MySQL", "Authentication"],
-    href: "/projects/campus-connect",
-    preview: "campus",
-  },
-  {
     number: "03",
     title: "Sales Data Platform",
-    category: "Data Engineering",
+    category: "DATA ENGINEERING",
     description:
       "End-to-end data pipeline and analytics platform to process, store and visualize sales data at scale.",
     status: "In Development",
@@ -54,7 +54,7 @@ const projects: Project[] = [
   {
     number: "04",
     title: "IT Support Toolkit",
-    category: "Systems",
+    category: "SYSTEMS",
     description:
       "Tools and automation scripts for application support and system administration tasks.",
     status: "Planned",
@@ -63,13 +63,19 @@ const projects: Project[] = [
   },
 ];
 
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
 function StatusBadge({ status }: { status: ProjectStatus }) {
   const statusClass =
-    status === "Completed"
-      ? "status-completed"
-      : status === "In Development"
-        ? "status-development"
-        : "status-planned";
+    status === "Active"
+      ? "status-active"
+      : status === "Completed"
+        ? "status-completed"
+        : status === "In Development"
+          ? "status-development"
+          : "status-planned";
 
   return (
     <span className={`work-status ${statusClass}`}>
@@ -79,11 +85,95 @@ function StatusBadge({ status }: { status: ProjectStatus }) {
   );
 }
 
+/* =========================================================
+   DEVELOPER PORTFOLIO PREVIEW
+========================================================= */
+
+function PortfolioPreview() {
+  return (
+    <div className="project-preview portfolio-preview">
+      <div className="portfolio-preview-grid" />
+
+      <div className="portfolio-preview-header">
+        <div className="portfolio-preview-brand">
+          <span className="portfolio-preview-brand-mark">SK</span>
+
+          <div>
+            <strong>SHUBHAM KAUSHIK</strong>
+            <small>SOFTWARE · DATA · SYSTEMS</small>
+          </div>
+        </div>
+
+        <div className="portfolio-preview-nav">
+          <span>Work</span>
+          <span>Experience</span>
+          <span>About</span>
+        </div>
+      </div>
+
+      <div className="portfolio-preview-body">
+        <div className="portfolio-preview-copy">
+          <small>DEVELOPER PORTFOLIO</small>
+
+          <strong>
+            Building software
+            <br />
+            around <em>real problems.</em>
+          </strong>
+
+          <p>
+            Applications, data and systems brought together through practical
+            engineering.
+          </p>
+
+          <div className="portfolio-preview-actions">
+            <span>Selected work</span>
+            <span>GitHub ↗</span>
+          </div>
+        </div>
+
+        <div className="portfolio-preview-system">
+          <div className="portfolio-system-card portfolio-system-card-one">
+            <small>01</small>
+            <strong>WEB</strong>
+          </div>
+
+          <div className="portfolio-system-card portfolio-system-card-two">
+            <small>02</small>
+            <strong>DATA</strong>
+          </div>
+
+          <div className="portfolio-system-card portfolio-system-card-three">
+            <small>03</small>
+            <strong>SYSTEMS</strong>
+          </div>
+
+          <span className="portfolio-system-line line-one" />
+          <span className="portfolio-system-line line-two" />
+        </div>
+      </div>
+
+      <div className="portfolio-preview-footer">
+        <span>NEXT.JS</span>
+        <span>REACT</span>
+        <span>TYPESCRIPT</span>
+
+        <strong>BUILD WITH PURPOSE.</strong>
+      </div>
+    </div>
+  );
+}
+
+/* =========================================================
+   NORTHSTAR PREVIEW
+========================================================= */
+
 function NorthstarPreview() {
   return (
     <div className="project-preview northstar-preview">
       <div className="preview-sidebar">
         <strong>Northstar Retail</strong>
+
         <span>▣ Dashboard</span>
         <span>▤ Sales</span>
         <span>◎ Customers</span>
@@ -119,34 +209,9 @@ function NorthstarPreview() {
   );
 }
 
-function CampusPreview() {
-  return (
-    <div className="project-preview campus-preview">
-      <div className="campus-sidebar">
-        <strong>CampusConnect</strong>
-        <span>⌂ Home</span>
-        <span>□ Events</span>
-        <span>☆ My Events</span>
-        <span>◯ Clubs</span>
-        <span>☰ Messages</span>
-      </div>
-
-      <div className="campus-content">
-        <small>STUDENT PLATFORM</small>
-
-        <strong>
-          Discover Events
-          <br />
-          Build Connections
-        </strong>
-
-        <p>Find events, join clubs and be part of a bigger community.</p>
-
-        <div className="fake-search">Search for events...</div>
-      </div>
-    </div>
-  );
-}
+/* =========================================================
+   LOCKED PROJECT PREVIEW
+========================================================= */
 
 function LockedPreview({ status }: { status: ProjectStatus }) {
   return (
@@ -176,6 +241,10 @@ function LockedPreview({ status }: { status: ProjectStatus }) {
   );
 }
 
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
 function ProjectCardContent({ project }: { project: Project }) {
   return (
     <>
@@ -194,9 +263,9 @@ function ProjectCardContent({ project }: { project: Project }) {
         <p className="work-card-description">{project.description}</p>
       </div>
 
-      {project.preview === "northstar" && <NorthstarPreview />}
+      {project.preview === "portfolio" && <PortfolioPreview />}
 
-      {project.preview === "campus" && <CampusPreview />}
+      {project.preview === "northstar" && <NorthstarPreview />}
 
       {project.preview === "locked" && (
         <LockedPreview status={project.status} />
@@ -219,12 +288,17 @@ function ProjectCardContent({ project }: { project: Project }) {
   );
 }
 
+/* =========================================================
+   FEATURED WORK SECTION
+========================================================= */
+
 export default function FeaturedWork() {
   return (
     <section id="work" className="featured-work-v2">
       <div className="work-container">
 
         {/* SECTION HEADING */}
+
         <div className="section-heading">
           <div>
             <p className="section-kicker">Selected Work</p>
@@ -246,6 +320,7 @@ export default function FeaturedWork() {
         </div>
 
         {/* PROJECT GRID */}
+
         <div className="work-project-grid">
           {projects.map((project) => {
             const cardClasses = [
@@ -284,19 +359,8 @@ export default function FeaturedWork() {
         </div>
 
         {/* UTILITY CARDS */}
+
         <div className="work-utility-grid">
-          <div className="utility-card">
-            <div className="utility-icon">◇</div>
-
-            <div>
-              <strong>More projects coming</strong>
-              <p>
-                Additional data, systems and development projects in progress.
-              </p>
-            </div>
-
-            <span className="utility-arrow">→</span>
-          </div>
 
           <a
             href="https://github.com/Shubham24065"
@@ -308,6 +372,7 @@ export default function FeaturedWork() {
 
             <div>
               <strong>Visit my GitHub</strong>
+
               <p>Explore code, experiments and ongoing work.</p>
             </div>
 
@@ -319,6 +384,7 @@ export default function FeaturedWork() {
 
             <div>
               <strong>Project documentation</strong>
+
               <p>Detailed documentation and setup guides.</p>
             </div>
 
@@ -330,6 +396,7 @@ export default function FeaturedWork() {
 
             <div>
               <strong>Have an idea?</strong>
+
               <p>
                 I&apos;m always open to interesting problems and collaborations.
               </p>
@@ -340,6 +407,7 @@ export default function FeaturedWork() {
         </div>
 
         {/* SECTION FOOTER */}
+
         <div className="work-footer-line">
           <p>
             <span />
