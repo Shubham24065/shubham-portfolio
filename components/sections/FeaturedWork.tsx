@@ -10,7 +10,7 @@ type Project = {
   status: ProjectStatus;
   technologies: string[];
   href?: string;
-  preview: "northstar" | "portfolio" | "locked";
+  preview: "northstar" | "portfolio" | "rideflow" | "locked";
 };
 
 const projects: Project[] = [
@@ -42,15 +42,22 @@ const projects: Project[] = [
     preview: "northstar",
   },
   {
-    number: "03",
-    title: "Sales Data Platform",
-    category: "DATA ENGINEERING",
-    description:
-      "End-to-end data pipeline and analytics platform to process, store and visualize sales data at scale.",
-    status: "In Development",
-    technologies: ["Python", "SQL", "ETL", "Power BI"],
-    preview: "locked",
-  },
+  number: "03",
+  title: "RideFlow",
+  category: "DATABASE ENGINEERING",
+  description:
+    "Ride-sharing database system designed around real operational workflows, relational modelling, data integrity, transactions, and scalable database architecture.",
+  status: "In Development",
+  technologies: [
+    "SQL Server",
+    "T-SQL",
+    "Relational Database Design",
+    "Transactions",
+    "Indexing",
+  ],
+  href: "/projects/rideflow",
+  preview: "rideflow",
+},
   {
     number: "04",
     title: "IT Support Toolkit",
@@ -209,6 +216,64 @@ function NorthstarPreview() {
   );
 }
 
+
+/* =========================================================
+   RideFlow PROJECT PREVIEW
+========================================================= */
+
+function RideFlowPreview() {
+  return (
+    <div className="project-preview rideflow-preview">
+      <div className="rideflow-preview-header">
+        <div>
+          <strong>RideFlow</strong>
+          <span>DATABASE ARCHITECTURE</span>
+        </div>
+
+        <span className="rideflow-db-label">SQL</span>
+      </div>
+
+      <div className="rideflow-schema">
+        <div className="rideflow-entity rideflow-rider">
+          <small>01</small>
+          <strong>RIDER</strong>
+        </div>
+
+        <div className="rideflow-entity rideflow-ride">
+          <small>02</small>
+          <strong>RIDE</strong>
+        </div>
+
+        <div className="rideflow-entity rideflow-driver">
+          <small>03</small>
+          <strong>DRIVER</strong>
+        </div>
+
+        <div className="rideflow-entity rideflow-vehicle">
+          <small>04</small>
+          <strong>VEHICLE</strong>
+        </div>
+
+        <div className="rideflow-entity rideflow-payment">
+          <small>05</small>
+          <strong>PAYMENT</strong>
+        </div>
+
+        <span className="rideflow-line line-rider-ride" />
+        <span className="rideflow-line line-ride-driver" />
+        <span className="rideflow-line line-driver-vehicle" />
+        <span className="rideflow-line line-ride-payment" />
+      </div>
+
+      <div className="rideflow-preview-footer">
+        <span>RELATIONAL MODEL</span>
+        <span>DATA INTEGRITY</span>
+        <span>TRANSACTIONS</span>
+      </div>
+    </div>
+  );
+}
+
 /* =========================================================
    LOCKED PROJECT PREVIEW
 ========================================================= */
@@ -267,6 +332,8 @@ function ProjectCardContent({ project }: { project: Project }) {
 
       {project.preview === "northstar" && <NorthstarPreview />}
 
+      {project.preview === "rideflow" && <RideFlowPreview />}
+      
       {project.preview === "locked" && (
         <LockedPreview status={project.status} />
       )}

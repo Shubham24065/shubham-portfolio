@@ -1294,6 +1294,181 @@ body {
 .preview-chart span:nth-child(5) { height: 52%; }
 .preview-chart span:nth-child(6) { height: 82%; }
 
+
+/* ========================================
+   RIDEFLOW DATABASE PREVIEW
+======================================== */
+
+.rideflow-preview {
+  position: relative;
+  padding: 14px 16px 12px;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(41, 148, 255, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #06111d 0%, #071827 100%);
+}
+
+.rideflow-preview-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.rideflow-preview-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rideflow-preview-header strong {
+  color: #f5f8fc;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+}
+
+.rideflow-preview-header span {
+  color: #5f91bd;
+  font-size: 5px;
+  letter-spacing: 0.15em;
+}
+
+.rideflow-db-label {
+  padding: 4px 7px;
+
+  border: 1px solid rgba(41, 148, 255, 0.3);
+  border-radius: 3px;
+
+  color: #2994ff !important;
+}
+
+/* SCHEMA */
+
+.rideflow-schema {
+  position: relative;
+  height: 105px;
+  margin-top: 5px;
+}
+
+.rideflow-entity {
+  position: absolute;
+  z-index: 2;
+
+  width: 64px;
+  height: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 8px;
+
+  background: #0a2033;
+  border: 1px solid rgba(41, 148, 255, 0.42);
+  border-radius: 4px;
+
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
+}
+
+.rideflow-entity small {
+  color: #2994ff;
+  font-size: 4px;
+}
+
+.rideflow-entity strong {
+  margin-top: 1px;
+
+  color: #cce7ff;
+  font-size: 6px;
+  letter-spacing: 0.08em;
+}
+
+.rideflow-rider {
+  left: 4%;
+  top: 18px;
+}
+
+.rideflow-ride {
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%);
+}
+
+.rideflow-driver {
+  right: 4%;
+  top: 18px;
+}
+
+.rideflow-vehicle {
+  right: 15%;
+  bottom: 5px;
+}
+
+.rideflow-payment {
+  left: 35%;
+  bottom: 5px;
+}
+
+/* RELATIONSHIP LINES */
+
+.rideflow-line {
+  position: absolute;
+  z-index: 1;
+
+  height: 1px;
+
+  background: rgba(41, 148, 255, 0.55);
+
+  transform-origin: left center;
+}
+
+.line-rider-ride {
+  width: 75px;
+  left: 20%;
+  top: 33px;
+}
+
+.line-ride-driver {
+  width: 75px;
+  left: 59%;
+  top: 33px;
+}
+
+.line-driver-vehicle {
+  width: 45px;
+  right: 11%;
+  top: 47px;
+
+  transform: rotate(70deg);
+}
+
+.line-ride-payment {
+  width: 48px;
+  left: 49%;
+  top: 48px;
+
+  transform: rotate(105deg);
+}
+
+/* FOOTER */
+
+.rideflow-preview-footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 6px;
+
+  border-top: 1px solid rgba(82, 137, 184, 0.15);
+
+  color: #6f91ae;
+  font-size: 4px;
+  letter-spacing: 0.1em;
+}
+
+
 /* ========================================
    DEVELOPER PORTFOLIO PREVIEW
 ======================================== */
@@ -5752,4 +5927,544 @@ body {
 
 .contact-form-status-error {
   color: #ff6b6b;
+}
+
+/* =========================================================
+   PROJECT CASE STUDY
+========================================================= */
+
+.case-study {
+  min-height: 100vh;
+  background: #020b12;
+  color: #eef6ff;
+}
+
+.case-study-container {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.case-study-hero {
+  padding: 80px 0 90px;
+  border-bottom: 1px solid #173044;
+}
+
+.case-study-back {
+  display: inline-block;
+  margin-bottom: 80px;
+  color: #7f9bb0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.case-study-back:hover {
+  color: #20aaff;
+}
+
+.case-study-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  margin-bottom: 35px;
+
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: #8db8d8;
+}
+
+.case-study-meta > span:first-child {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.case-study-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-left: auto;
+
+  padding: 8px 14px;
+
+  border: 1px solid #164b70;
+  border-radius: 6px;
+
+  letter-spacing: normal;
+  color: #8fcfff;
+}
+
+.case-study-status i {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #249cff;
+
+  box-shadow: 0 0 10px #249cff;
+}
+
+.case-study-hero h1 {
+  margin: 0;
+
+  max-width: 900px;
+
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.case-study-hero h2 {
+  max-width: 850px;
+
+  margin: 35px 0 20px;
+
+  font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.25;
+
+  color: #35aaff;
+}
+
+.case-study-description {
+  max-width: 760px;
+
+  margin: 0;
+
+  font-size: 1.1rem;
+  line-height: 1.8;
+
+  color: #a7bfd1;
+}
+
+.case-study-actions {
+  display: flex;
+  gap: 14px;
+
+  margin-top: 40px;
+}
+
+.case-study-actions a {
+  padding: 13px 20px;
+
+  border: 1px solid #1f5f89;
+  border-radius: 6px;
+
+  color: #dcefff;
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.case-study-actions a:hover {
+  border-color: #22aaff;
+  background: #071a28;
+}
+
+.case-study-actions .case-study-primary-action {
+  background: #159cff;
+  border-color: #159cff;
+  color: #ffffff;
+}
+
+/* OVERVIEW */
+
+/* =========================================
+   PROJECT OVERVIEW
+========================================= */
+
+.case-study-overview {
+  border-bottom: 1px solid #173247;
+}
+
+.case-study-overview .case-study-container {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.case-study-kicker {
+  margin: 0 0 38px;
+  color: #20a9ff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ROLE / YEAR / STATUS */
+
+.case-study-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #1b3a4f;
+  border-bottom: 1px solid #1b3a4f;
+}
+
+.case-study-overview-grid > div {
+  min-height: 110px;
+  padding: 30px 32px 28px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.case-study-overview-grid > div:not(:first-child) {
+  padding-left: 32px;
+  border-left: 1px solid #1b3a4f;
+}
+
+.case-study-overview-grid span,
+.case-study-stack > span {
+  color: #6fa6c9;
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.case-study-overview-grid strong {
+  color: #f4f8fc;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* TECHNOLOGY */
+
+.case-study-stack {
+  margin-top: 38px;
+}
+
+.case-study-stack > span {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.case-study-stack > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.case-study-stack strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 17px;
+
+  border: 1px solid #1e4965;
+  border-radius: 6px;
+
+  color: #dcefff;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  background: rgba(8, 29, 43, 0.35);
+}
+
+@media (max-width: 768px) {
+  .case-study-overview .case-study-container {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .case-study-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-overview-grid > div {
+    min-height: auto;
+    padding: 22px 0;
+  }
+
+  .case-study-overview-grid > div:not(:first-child) {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid #1b3a4f;
+  }
+
+  .case-study-stack {
+    margin-top: 32px;
+  }
+}
+
+/* CONTENT */
+
+.case-study-content {
+  padding: 20px 0 80px;
+}
+
+.case-study-section {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 50px;
+
+  padding: 65px 0;
+
+  border-bottom: 1px solid #132c3d;
+}
+
+.case-study-section-number {
+  color: #2caaff;
+
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+}
+
+.case-study-section h3 {
+  margin: 0 0 20px;
+
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 500;
+}
+
+.case-study-section p {
+  max-width: 780px;
+
+  margin: 0;
+
+  color: #9eb7c9;
+
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+/* FOOTER */
+
+.case-study-footer {
+  padding: 50px 0 80px;
+
+  border-top: 1px solid #173044;
+}
+
+.case-study-footer .case-study-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-study-footer p {
+  color: #65869e;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+}
+
+.case-study-footer a {
+  color: #28aaff;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .case-study-container {
+    width: min(100% - 36px, 1180px);
+  }
+
+  .case-study-hero {
+    padding: 50px 0 65px;
+  }
+
+  .case-study-back {
+    margin-bottom: 50px;
+  }
+
+  .case-study-meta {
+    flex-wrap: wrap;
+  }
+
+  .case-study-status {
+    margin-left: 0;
+  }
+
+  .case-study-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-overview-grid > div:not(:last-child) {
+    border-right: 0;
+    border-bottom: 1px solid #18364a;
+  }
+
+  .case-study-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .case-study-footer .case-study-container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* ================================
+   CASE STUDY — ARCHITECTURE FLOW
+================================ */
+
+.architecture-flow {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 52px;
+}
+
+.architecture-node {
+  min-height: 150px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid rgba(72, 164, 220, 0.28);
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(12, 43, 65, 0.7),
+      rgba(3, 18, 29, 0.9)
+    );
+}
+
+.architecture-node-primary {
+  border-color: #1da1f2;
+
+  box-shadow:
+    0 0 30px rgba(29, 161, 242, 0.08);
+}
+
+.architecture-node span {
+  color: #1da1f2;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+.architecture-node strong {
+  margin-top: 25px;
+
+  color: #f4f8fc;
+
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.architecture-node small {
+  margin-top: 7px;
+
+  color: #7fa6c4;
+
+  font-size: 0.78rem;
+}
+
+.architecture-connector {
+  color: #1da1f2;
+
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+@media (max-width: 950px) {
+  .architecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-connector {
+    transform: rotate(90deg);
+  }
+}
+
+/* ================================
+   CASE STUDY — DEPLOYMENT FLOW
+================================ */
+
+.deployment-flow {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    55px
+    minmax(0, 1fr)
+    55px
+    minmax(0, 1fr)
+    55px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  margin-top: 48px;
+}
+
+.deployment-step {
+  min-height: 145px;
+
+  padding: 22px;
+
+  border-top: 2px solid #1da1f2;
+
+  background: rgba(7, 31, 47, 0.45);
+}
+
+.deployment-step span {
+  color: #1da1f2;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+
+.deployment-step strong {
+  display: block;
+
+  margin-top: 22px;
+
+  color: #f4f8fc;
+
+  font-size: 1rem;
+}
+
+.deployment-step p {
+  margin-top: 8px;
+
+  color: #86a9c4;
+
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.deployment-line {
+  height: 1px;
+
+  background: #1da1f2;
+
+  opacity: 0.6;
+}
+
+@media (max-width: 950px) {
+  .deployment-flow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .deployment-line {
+    width: 1px;
+    height: 28px;
+
+    margin-left: 28px;
+  }
 }
