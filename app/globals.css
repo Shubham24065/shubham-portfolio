@@ -6468,3 +6468,638 @@ body {
     margin-left: 28px;
   }
 }
+
+/* =========================================================
+   NORTHSTAR — DATABASE ARCHITECTURE
+========================================================= */
+
+/* =========================================================
+   NORTHSTAR — RELATIONAL MODEL
+========================================================= */
+
+.northstar-schema {
+  margin-top: 48px;
+  padding: 28px 32px 30px;
+
+  border: 1px solid rgba(52, 142, 196, 0.22);
+  border-radius: 8px;
+
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(28, 153, 230, 0.07),
+      transparent 43%
+    ),
+    rgba(4, 20, 31, 0.5);
+}
+
+.northstar-schema-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+  margin-bottom: 34px;
+
+  border-bottom: 1px solid rgba(50, 118, 159, 0.2);
+}
+
+.northstar-schema-header span {
+  color: #28a9f7;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+}
+
+.northstar-schema-header small {
+  color: #628ca7;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+}
+
+/* =========================================================
+   NORTHSTAR — DATABASE STRUCTURE MODEL
+========================================================= */
+
+.northstar-schema-model {
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 0.8fr)
+    minmax(260px, 1fr)
+    minmax(220px, 0.9fr);
+
+  grid-template-areas:
+    "inputs main order"
+    ". main ."
+    ". products products";
+
+  column-gap: 42px;
+  row-gap: 28px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   GENERIC TABLE CARD
+========================================================= */
+
+.schema-table {
+  width: 100%;
+  min-width: 0;
+  min-height: 110px;
+
+  padding: 18px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid rgba(55, 141, 195, 0.28);
+  border-radius: 6px;
+
+  background: rgba(7, 30, 46, 0.82);
+}
+
+.schema-table span {
+  margin-bottom: 8px;
+
+  color: #269fe9;
+  font-size: 0.56rem;
+  letter-spacing: 0.15em;
+}
+
+.schema-table strong {
+  color: #edf7fd;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.schema-table small {
+  margin-top: 9px;
+
+  color: #668ca5;
+  font-size: 0.58rem;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   CUSTOMERS + EMPLOYEES
+========================================================= */
+
+.schema-inputs {
+  grid-area: inputs;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding-top: 30px;
+}
+
+/* =========================================================
+   ORDERS → ORDER ITEMS → PRODUCTS
+========================================================= */
+
+.schema-main-chain {
+  grid-area: main;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.schema-table-core {
+  border-color: rgba(41, 164, 236, 0.48);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 48, 72, 0.92),
+      rgba(6, 29, 44, 0.9)
+    );
+}
+
+/* =========================================================
+   PAYMENTS + SHIPMENTS
+========================================================= */
+
+.schema-order-branches {
+  grid-area: order;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding-top: 30px;
+}
+
+.schema-side-branch {
+  display: block;
+  width: 100%;
+}
+
+.schema-order-branches .schema-table {
+  width: 100%;
+}
+
+/* =========================================================
+   CATEGORIES + SUPPLIERS + INVENTORY
+========================================================= */
+
+.schema-product-branches {
+  grid-area: products;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-top: 12px;
+  padding-top: 0;
+}
+
+.schema-product-branches .schema-table {
+  width: 100%;
+}
+/* FOOTER */
+
+.northstar-schema-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-top: 32px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(50, 118, 159, 0.2);
+}
+
+.schema-legend {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.schema-legend span {
+  padding: 4px 7px;
+
+  border: 1px solid rgba(43, 161, 230, 0.35);
+  border-radius: 3px;
+
+  color: #2aa9f4;
+  font-size: 0.55rem;
+}
+
+.schema-legend small {
+  margin-right: 12px;
+
+  color: #668ca5;
+  font-size: 0.53rem;
+  letter-spacing: 0.1em;
+}
+
+.northstar-schema-footer p {
+  max-width: 560px;
+
+  margin: 0 !important;
+
+  color: #668ca5 !important;
+  font-size: 0.65rem !important;
+  text-align: right;
+}
+
+/* =========================================================
+   NORTHSTAR SCHEMA — RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+  .northstar-schema-model {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .schema-inputs,
+  .schema-order-branches {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .schema-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .schema-input-line {
+    display: none;
+  }
+
+  .schema-main-chain {
+    width: 100%;
+  }
+
+  .schema-order-branches {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .schema-side-branch {
+    display: block;
+  }
+
+  .schema-horizontal-arrow {
+    display: none;
+  }
+
+  .schema-product-branches {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .northstar-schema {
+    padding: 22px 18px;
+  }
+
+  .northstar-schema-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .schema-inputs,
+  .schema-order-branches,
+  .schema-product-branches {
+    grid-template-columns: 1fr;
+  }
+
+  .schema-product-branches {
+    padding-top: 0;
+  }
+
+  .schema-product-arrow {
+    display: none;
+  }
+
+  .northstar-schema-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .northstar-schema-footer p {
+    max-width: none;
+    text-align: left;
+  }
+
+  .schema-legend {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================================
+   NORTHSTAR — SQL TICKETS
+========================================================= */
+
+.northstar-ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+
+  margin-top: 48px;
+}
+
+.northstar-ticket {
+  min-height: 155px;
+
+  padding: 20px;
+
+  border: 1px solid rgba(58, 139, 190, 0.24);
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 36, 54, 0.72),
+      rgba(4, 19, 29, 0.82)
+    );
+}
+
+.northstar-ticket-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.northstar-ticket-top span {
+  color: #2ba9f5;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.northstar-ticket-top small {
+  color: #55c995;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+}
+
+.northstar-ticket > strong {
+  display: block;
+
+  color: #edf7fd;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.northstar-ticket > p {
+  margin: 12px 0 0 !important;
+
+  color: #648ba5 !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   NORTHSTAR — ANALYSIS WORKFLOW
+========================================================= */
+
+.northstar-workflow {
+  display: flex;
+  align-items: stretch;
+
+  margin-top: 48px;
+}
+
+.northstar-workflow-item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.northstar-workflow-step {
+  width: 100%;
+  min-height: 105px;
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-top: 2px solid #229fe9;
+
+  background: rgba(7, 30, 46, 0.48);
+}
+
+.northstar-workflow-step span {
+  color: #249fe8;
+  font-size: 0.65rem;
+  letter-spacing: 0.13em;
+}
+
+.northstar-workflow-step strong {
+  color: #eaf6fd;
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.northstar-workflow-arrow {
+  width: 30px;
+  flex-shrink: 0;
+
+  color: #268fcf;
+  text-align: center;
+}
+
+/* =========================================================
+   NORTHSTAR RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+  .northstar-db-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .northstar-db-arrow {
+    display: none;
+  }
+
+  .northstar-db-row-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .northstar-ticket-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .northstar-workflow {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .northstar-workflow-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .northstar-workflow-arrow {
+    width: auto;
+    height: 25px;
+
+    display: grid;
+    place-items: center;
+
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .northstar-db-row,
+  .northstar-db-row-bottom,
+  .northstar-ticket-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   NORTHSTAR — OPERATIONAL DATASET
+========================================================= */
+
+.northstar-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 44px;
+
+  border-top: 1px solid rgba(55, 141, 195, 0.25);
+  border-left: 1px solid rgba(55, 141, 195, 0.25);
+}
+
+.northstar-metric {
+  min-height: 135px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-right: 1px solid rgba(55, 141, 195, 0.25);
+  border-bottom: 1px solid rgba(55, 141, 195, 0.25);
+
+  background: rgba(7, 30, 46, 0.38);
+}
+
+.northstar-metric strong {
+  color: #eef8ff;
+
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.northstar-metric span {
+  color: #59a9d9;
+
+  font-size: 0.64rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 850px) {
+  .northstar-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .northstar-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   NORTHSTAR — SQL TECHNIQUES
+========================================================= */
+
+.northstar-techniques {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+
+  margin-top: 44px;
+}
+
+.northstar-technique-group {
+  border: 1px solid rgba(55, 141, 195, 0.25);
+  border-radius: 6px;
+
+  background: rgba(7, 30, 46, 0.38);
+}
+
+.northstar-technique-header {
+  min-height: 105px;
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(55, 141, 195, 0.22);
+}
+
+.northstar-technique-header span {
+  color: #29a8f3;
+
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+}
+
+.northstar-technique-header strong {
+  color: #eef8ff;
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.northstar-technique-list {
+  padding: 8px 22px;
+}
+
+.northstar-technique-list > div {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-bottom: 1px solid rgba(55, 141, 195, 0.12);
+}
+
+.northstar-technique-list > div:last-child {
+  border-bottom: 0;
+}
+
+.northstar-technique-list span {
+  color: #29a8f3;
+  font-size: 0.72rem;
+}
+
+.northstar-technique-list p {
+  margin: 0 !important;
+
+  color: #91b7cf !important;
+
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 800px) {
+  .northstar-techniques {
+    grid-template-columns: 1fr;
+  }
+}
