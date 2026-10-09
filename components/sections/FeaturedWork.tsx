@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 type ProjectStatus = "Active" | "Completed" | "In Development" | "Planned";
@@ -10,7 +11,7 @@ type Project = {
   status: ProjectStatus;
   technologies: string[];
   href?: string;
-  preview: "northstar" | "portfolio" | "rideflow" | "locked";
+  preview: "northstar" | "portfolio" | "rideflow" | "hotel";
 };
 
 const projects: Project[] = [
@@ -27,11 +28,22 @@ const projects: Project[] = [
   },
   {
     number: "02",
+    category: "SOFTWARE / DATABASE",
+    title: "Hotel Reservation System",
+    description:
+      "Desktop hotel management system featuring reservations, billing, loyalty programs, administrative workflows, and reporting, built on a three-tier architecture.",
+    status: "Completed",
+    technologies: ["Java", "JavaFX", "Hibernate/JPA", "MySQL"],
+    href: "/projects/hotel-reservation-system",
+    preview: "hotel",
+  },
+  {
+    number: "03",
     title: "Northstar Retail",
     category: "DATA / SQL",
     description:
-      "SQL business operations simulation for a fictional e-commerce company. Built analytical reporting, customer insights and inventory risk analysis.",
-    status: "Completed",
+      "SQL business operations simulation for a fictional e-commerce company, covering analytical reporting, customer insights, revenue reconciliation, and inventory risk analysis.",
+    status: "In Development",
     technologies: [
       "SQL Server",
       "T-SQL",
@@ -42,37 +54,23 @@ const projects: Project[] = [
     preview: "northstar",
   },
   {
-  number: "03",
-  title: "RideFlow",
-  category: "DATABASE ENGINEERING",
-  description:
-    "Ride-sharing database system designed around real operational workflows, relational modelling, data integrity, transactions, and scalable database architecture.",
-  status: "In Development",
-  technologies: [
-    "SQL Server",
-    "T-SQL",
-    "Relational Database Design",
-    "Transactions",
-    "Indexing",
-  ],
-  href: "/projects/rideflow",
-  preview: "rideflow",
-},
-  {
     number: "04",
-    title: "IT Support Toolkit",
-    category: "SYSTEMS",
+    title: "RideFlow",
+    category: "DATABASE ENGINEERING",
     description:
-      "Tools and automation scripts for application support and system administration tasks.",
-    status: "Planned",
-    technologies: ["PowerShell", "Python", "APIs", "Automation"],
-    preview: "locked",
+      "Ride-sharing database system designed around operational workflows, relational modelling, data integrity, transactions, and database architecture.",
+    status: "In Development",
+    technologies: [
+      "SQL Server",
+      "T-SQL",
+      "Relational Database Design",
+      "Transactions",
+      "Indexing",
+    ],
+    href: "/projects/rideflow",
+    preview: "rideflow",
   },
 ];
-
-/* =========================================================
-   STATUS BADGE
-========================================================= */
 
 function StatusBadge({ status }: { status: ProjectStatus }) {
   const statusClass =
@@ -164,8 +162,59 @@ function PortfolioPreview() {
         <span>NEXT.JS</span>
         <span>REACT</span>
         <span>TYPESCRIPT</span>
-
         <strong>BUILD WITH PURPOSE.</strong>
+      </div>
+    </div>
+  );
+}
+
+/* =========================================================
+   HOTEL RESERVATION SYSTEM PREVIEW
+========================================================= */
+
+
+function HotelPreview() {
+  const features = [
+    "Guest Reservations",
+    "Billing & Payments",
+    "Loyalty & Reporting",
+  ];
+
+  return (
+    <div className="project-preview hotel-preview hotel-dashboard-preview">
+      <div className="hotel-preview-header">
+        <div>
+          <small>HOTEL MANAGEMENT SYSTEM</small>
+          <strong>Operations Overview</strong>
+        </div>
+
+        <span className="hotel-preview-indicator">JAVA</span>
+      </div>
+
+      <div className="hotel-dashboard-metrics">
+        <div>
+          
+          <span>KIOSK BOOKING</span>
+        </div>
+
+        <div>
+          
+          <span>ADMIN PORTAL</span>
+        </div>
+
+        <div>
+          
+          <span>REPORTING</span>
+        </div>
+      </div>
+
+      <div className="hotel-dashboard-features">
+        {features.map((feature) => (
+          <div key={feature}>
+            <span>{feature}</span>
+            <span className="hotel-feature-check">✓</span>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -180,7 +229,6 @@ function NorthstarPreview() {
     <div className="project-preview northstar-preview">
       <div className="preview-sidebar">
         <strong>Northstar Retail</strong>
-
         <span>▣ Dashboard</span>
         <span>▤ Sales</span>
         <span>◎ Customers</span>
@@ -216,9 +264,8 @@ function NorthstarPreview() {
   );
 }
 
-
 /* =========================================================
-   RideFlow PROJECT PREVIEW
+   RIDEFLOW PREVIEW
 ========================================================= */
 
 function RideFlowPreview() {
@@ -275,38 +322,6 @@ function RideFlowPreview() {
 }
 
 /* =========================================================
-   LOCKED PROJECT PREVIEW
-========================================================= */
-
-function LockedPreview({ status }: { status: ProjectStatus }) {
-  return (
-    <div className="project-preview locked-preview">
-      <div className="blurred-dashboard">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-      </div>
-
-      <div className="lock-overlay">
-        <div className="css-lock">
-          <span />
-        </div>
-
-        <strong>{status}</strong>
-
-        <p>
-          {status === "Planned"
-            ? "This project is planned for the near future. More details will be shared soon."
-            : "This project is currently being built. Details will be available soon."}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-/* =========================================================
    PROJECT CARD
 ========================================================= */
 
@@ -329,14 +344,9 @@ function ProjectCardContent({ project }: { project: Project }) {
       </div>
 
       {project.preview === "portfolio" && <PortfolioPreview />}
-
+      {project.preview === "hotel" && <HotelPreview />}
       {project.preview === "northstar" && <NorthstarPreview />}
-
       {project.preview === "rideflow" && <RideFlowPreview />}
-      
-      {project.preview === "locked" && (
-        <LockedPreview status={project.status} />
-      )}
 
       <div className="work-card-bottom">
         <div className="technology-list">
@@ -363,9 +373,6 @@ export default function FeaturedWork() {
   return (
     <section id="work" className="featured-work-v2">
       <div className="work-container">
-
-        {/* SECTION HEADING */}
-
         <div className="section-heading">
           <div>
             <p className="section-kicker">Selected Work</p>
@@ -385,8 +392,6 @@ export default function FeaturedWork() {
             View all projects <span>→</span>
           </Link>
         </div>
-
-        {/* PROJECT GRID */}
 
         <div className="work-project-grid">
           {projects.map((project) => {
@@ -425,10 +430,7 @@ export default function FeaturedWork() {
           })}
         </div>
 
-        {/* UTILITY CARDS */}
-
         <div className="work-utility-grid">
-
           <a
             href="https://github.com/Shubham24065"
             target="_blank"
@@ -439,7 +441,6 @@ export default function FeaturedWork() {
 
             <div>
               <strong>Visit my GitHub</strong>
-
               <p>Explore code, experiments and ongoing work.</p>
             </div>
 
@@ -451,7 +452,6 @@ export default function FeaturedWork() {
 
             <div>
               <strong>Project documentation</strong>
-
               <p>Detailed documentation and setup guides.</p>
             </div>
 
@@ -463,7 +463,6 @@ export default function FeaturedWork() {
 
             <div>
               <strong>Have an idea?</strong>
-
               <p>
                 I&apos;m always open to interesting problems and collaborations.
               </p>
@@ -472,8 +471,6 @@ export default function FeaturedWork() {
             <span className="utility-arrow">→</span>
           </div>
         </div>
-
-        {/* SECTION FOOTER */}
 
         <div className="work-footer-line">
           <p>

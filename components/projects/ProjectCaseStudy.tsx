@@ -11,7 +11,8 @@ export type ProjectSection = {
     | "northstar-tickets"
     | "northstar-workflow"
     | "northstar-metrics"
-    | "northstar-techniques";
+    | "northstar-techniques"
+    | "hotel-architecture";
 };
 
 type ProjectCaseStudyProps = {
@@ -399,6 +400,66 @@ function NorthstarTechniquesVisual() {
   );
 }
 
+function HotelArchitectureVisual() {
+  const layers = [
+    {
+      number: "01",
+      label: "PRESENTATION LAYER",
+      title: "JavaFX / FXML",
+      detail: "Kiosk Booking · Admin Dashboard · Controllers",
+    },
+    {
+      number: "02",
+      label: "BUSINESS LAYER",
+      title: "Service Layer",
+      detail: "Reservations · Pricing · Billing · Loyalty",
+    },
+    {
+      number: "03",
+      label: "PERSISTENCE LAYER",
+      title: "Hibernate / JPA",
+      detail: "Repositories · Entities · Transactions",
+    },
+    {
+      number: "04",
+      label: "DATABASE STORAGE",
+      title: "MySQL",
+      detail: "Reservations · Guests · Rooms · Payments",
+    },
+  ];
+
+  return (
+    <div className="hotel-architecture">
+      <div className="hotel-architecture-heading">
+        <span>SYSTEM ARCHITECTURE</span>
+        <small>APPLICATION DATA FLOW</small>
+      </div>
+
+      <div className="hotel-architecture-layers">
+        {layers.map((layer, index) => (
+          <div key={layer.number}>
+            <div className="hotel-architecture-layer">
+              <span>{layer.number} / {layer.label}</span>
+              <strong>{layer.title}</strong>
+              <small>{layer.detail}</small>
+            </div>
+
+            {index < layers.length - 1 && (
+              <div className="hotel-architecture-arrow">↓</div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="hotel-architecture-footer">
+        <span>SEPARATION OF CONCERNS</span>
+        <span>ORM PERSISTENCE</span>
+        <span>TRANSACTION MANAGEMENT</span>
+      </div>
+    </div>
+  );
+}
+
 function SectionVisual({
   visual,
 }: {
@@ -430,6 +491,10 @@ function SectionVisual({
 
   if (visual === "northstar-techniques") {
     return <NorthstarTechniquesVisual />;
+  }
+
+  if (visual === "hotel-architecture") {
+    return <HotelArchitectureVisual />;
   }
 
   return null;

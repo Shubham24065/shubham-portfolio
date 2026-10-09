@@ -1295,6 +1295,227 @@ body {
 .preview-chart span:nth-child(6) { height: 82%; }
 
 
+
+/* =========================================================
+   HOTEL RESERVATION SYSTEM — PROJECT PREVIEW
+========================================================= */
+
+.hotel-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 320px;
+  padding: 22px;
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(18, 83, 119, 0.18),
+      transparent 65%
+    ),
+    #05121e;
+  border: 1px solid rgba(40, 117, 162, 0.24);
+  border-radius: 8px;
+}
+
+.hotel-preview-header,
+.hotel-preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hotel-preview-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hotel-preview-header small,
+.hotel-preview-indicator,
+.hotel-preview-footer span {
+  color: #3ca8eb;
+  font-size: 0.57rem;
+  letter-spacing: 0.13em;
+}
+
+.hotel-preview-header strong {
+  color: #e9f4fc;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hotel-preview-indicator {
+  padding: 6px 9px;
+  border: 1px solid rgba(44, 152, 214, 0.38);
+  border-radius: 4px;
+}
+
+.hotel-preview-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 16px 0;
+}
+
+.hotel-preview-layer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: min(100%, 300px);
+  padding: 12px 16px;
+  border: 1px solid rgba(55, 141, 195, 0.36);
+  border-radius: 5px;
+  background: rgba(8, 34, 51, 0.92);
+  text-align: center;
+}
+
+.hotel-preview-layer-primary {
+  border-color: rgba(44, 160, 228, 0.65);
+  background: rgba(10, 54, 79, 0.9);
+}
+
+.hotel-preview-layer span {
+  color: #37aff4;
+  font-size: 0.53rem;
+  letter-spacing: 0.13em;
+}
+
+.hotel-preview-layer strong {
+  color: #f1f8fd;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.hotel-preview-layer small {
+  color: #7baac6;
+  font-size: 0.61rem;
+  line-height: 1.5;
+}
+
+.hotel-preview-connector {
+  width: 1px;
+  height: 17px;
+  background: #289fdf;
+  position: relative;
+}
+
+.hotel-preview-connector::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid #289fdf;
+  border-bottom: 1px solid #289fdf;
+  transform: rotate(45deg);
+}
+
+.hotel-preview-footer {
+  padding-top: 12px;
+  border-top: 1px solid rgba(44, 114, 154, 0.25);
+}
+
+.hotel-preview-footer span {
+  font-size: 0.5rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .hotel-preview {
+    padding: 15px;
+  }
+
+  .hotel-preview-footer {
+    flex-wrap: wrap;
+  }
+
+  .hotel-preview-footer span {
+    font-size: 0.46rem;
+  }
+}
+
+
+/* COMPACT HOTEL DASHBOARD PREVIEW */
+
+.hotel-dashboard-preview {
+  height: 220px;
+  min-height: 0;
+  padding: 10px 10px;
+  gap: 12px;
+}
+
+.hotel-dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hotel-dashboard-metrics > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 05px 10px;
+  background: rgba(10, 42, 63, 0.8);
+  border: 1px solid rgba(46, 125, 174, 0.3);
+  border-radius: 5px;
+}
+
+.hotel-dashboard-metrics strong {
+  color: #eef8ff;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.hotel-dashboard-metrics span {
+  color: #6ea9cc;
+  font-size: 0.9rem;
+  letter-spacing: 0.07em;
+}
+
+.hotel-dashboard-features {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  gap: 7px;
+}
+
+.hotel-dashboard-features > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #a4cbe3;
+  font-size: 0.7rem;
+}
+
+.hotel-feature-check {
+  color: #36d9a5;
+}
+
+.hotel-dashboard-preview .hotel-preview-footer {
+  margin-top: auto;
+}
+
+@media (max-width: 480px) {
+  .hotel-dashboard-preview {
+    height: 250px;
+  }
+
+  .hotel-dashboard-metrics > div {
+    padding: 10px 7px;
+  }
+
+  .hotel-dashboard-metrics span {
+    font-size: 0.45rem;
+  }
+}
+
+
 /* ========================================
    RIDEFLOW DATABASE PREVIEW
 ======================================== */
@@ -7102,4 +7323,128 @@ body {
   .northstar-techniques {
     grid-template-columns: 1fr;
   }
+}
+
+/* HOTEL CASE STUDY — ARCHITECTURE */
+
+.hotel-architecture {
+  margin-top: 30px;
+  padding: 24px;
+  border: 1px solid #1b4057;
+  border-radius: 10px;
+  background: #061622;
+}
+
+.hotel-architecture-heading,
+.hotel-architecture-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #42b9ff;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.hotel-architecture-heading small {
+  color: #7698ad;
+}
+
+.hotel-architecture-layers {
+  max-width: 620px;
+  margin: 30px auto;
+}
+
+.hotel-architecture-layer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  border: 1px solid #245474;
+  border-radius: 7px;
+  background: #09263a;
+}
+
+.hotel-architecture-layer > span {
+  color: #32b6ff;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+}
+
+.hotel-architecture-layer strong {
+  color: #f0f8ff;
+  font-size: 20px;
+}
+
+.hotel-architecture-layer small {
+  color: #94bed7;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.hotel-architecture-arrow {
+  padding: 10px 0;
+  text-align: center;
+  color: #32b6ff;
+  font-size: 23px;
+}
+
+.hotel-architecture-footer {
+  justify-content: center;
+  gap: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #17384e;
+  color: #789bb1;
+}
+
+@media (max-width: 640px) {
+  .hotel-architecture {
+    padding: 18px;
+  }
+
+  .hotel-architecture-layer strong {
+    font-size: 17px;
+  }
+
+  .hotel-architecture-footer {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+.hotel-architecture {
+  margin-top: 24px;
+  padding: 20px;
+}
+
+.hotel-architecture-layers {
+  max-width: 570px;
+  margin: 16px auto;
+}
+
+.hotel-architecture-layer {
+  padding: 12px 16px;
+  gap: 5px;
+  min-height: auto;
+}
+
+.hotel-architecture-layer strong {
+  font-size: 16px;
+}
+
+.hotel-architecture-layer small,
+.hotel-architecture-layer span {
+  font-size: 12px;
+}
+
+.hotel-architecture-arrow {
+  padding: 2px 0;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.hotel-architecture-footer {
+  padding-top: 12px;
 }
