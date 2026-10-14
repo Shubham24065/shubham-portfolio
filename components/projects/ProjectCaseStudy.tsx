@@ -1,4 +1,5 @@
 import HotelShowcaseVisual from "./HotelShowcaseVisual";
+import NorthstarTicketsVisual from "./NorthstarTicketsVisual";
 import Link from "next/link";
 
 
@@ -469,122 +470,6 @@ function NorthstarDatabaseVisual() {
         </p>
 
       </div>
-
-    </div>
-
-  );
-
-}
-
-
-
-const northstarTickets = [
-
-  {
-
-    id: "SQL-001",
-
-    department: "SALES",
-
-    title: "Top Customers by Revenue",
-
-    status: "COMPLETED",
-
-  },
-
-  {
-
-    id: "SQL-002",
-
-    department: "OPERATIONS",
-
-    title: "Inventory Risk Analysis",
-
-    status: "COMPLETED",
-
-  },
-
-  {
-
-    id: "SQL-003",
-
-    department: "FINANCE",
-
-    title: "Revenue Reconciliation",
-
-    status: "COMPLETED",
-
-  },
-
-  {
-
-    id: "SQL-004",
-
-    department: "MANAGEMENT",
-
-    title: "Monthly Revenue Trends",
-
-    status: "COMPLETED",
-
-  },
-
-  {
-
-    id: "SQL-005",
-
-    department: "SUPPORT / OPS",
-
-    title: "Shipping Delay Analysis",
-
-    status: "COMPLETED",
-
-  },
-
-  {
-
-    id: "SQL-006",
-
-    department: "SALES / MANAGEMENT",
-
-    title: "Product Sales Performance",
-
-    status: "COMPLETED",
-
-  },
-
-];
-
-
-
-function NorthstarTicketsVisual() {
-
-  return (
-
-    <div className="northstar-ticket-grid">
-
-      {northstarTickets.map((ticket) => (
-
-        <div className="northstar-ticket" key={ticket.id}>
-
-          <div className="northstar-ticket-top">
-
-            <span>{ticket.id}</span>
-
-            <small>{ticket.status}</small>
-
-          </div>
-
-
-
-          <strong>{ticket.title}</strong>
-
-
-
-          <p>{ticket.department}</p>
-
-        </div>
-
-      ))}
 
     </div>
 

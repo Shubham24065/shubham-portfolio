@@ -7707,3 +7707,23 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Northstar ticket cards: interactive while preserving existing card styling */
+.northstar-ticket-button { width: 100%; font: inherit; text-align: left; cursor: pointer; color: inherit; }
+.northstar-ticket-button:hover, .northstar-ticket-button:focus-visible { border-color: #24aaff; outline: none; }
+.northstar-modal-backdrop { position: fixed; inset: 0; z-index: 1000; background: rgba(0, 7, 14, .82); display: grid; place-items: center; padding: 24px; backdrop-filter: blur(7px); }
+.northstar-modal { width: min(100%, 760px); max-height: min(85vh, 800px); overflow-y: auto; background: #061b29; color: #eff7ff; border: 1px solid #22506a; border-radius: 12px; padding: clamp(24px, 4vw, 48px); box-shadow: 0 28px 90px #0009; }
+.northstar-modal-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #42b6ff; font-size: 12px; letter-spacing: .12em; }
+.northstar-modal-top button { background: transparent; border: 1px solid #28526b; border-radius: 6px; color: #eaf7ff; cursor: pointer; font-size: 20px; padding: 6px 12px; }
+.northstar-modal h2 { font-size: clamp(28px, 4vw, 46px); line-height: 1.15; margin: 28px 0 16px; }
+.northstar-modal-status { color: #34ddb3; font-size: 12px; letter-spacing: .12em; margin-bottom: 36px; }
+.northstar-modal h3 { color: #42b6ff; font-size: 12px; letter-spacing: .14em; margin: 28px 0 12px; }
+.northstar-modal p { color: #b6d4e8; font-size: 16px; line-height: 1.75; margin: 0; }
+.northstar-modal .northstar-modal-note { margin-top: 38px; font-size: 12px; opacity: .7; }
+
+/* Ticket solution link */
+.northstar-modal-actions { margin-top: 34px; padding-top: 24px; border-top: 1px solid #22506a; display: flex; align-items: center; }
+.northstar-solution-link { display: inline-flex; align-items: center; gap: 14px; padding: 13px 19px; color: #eaf7ff; text-decoration: none; border: 1px solid #2a8dc3; border-radius: 6px; background: #092b40; font-size: 14px; font-weight: 600; transition: background .2s, border-color .2s; }
+.northstar-solution-link:hover, .northstar-solution-link:focus-visible { background: #0e3b56; border-color: #4dbbff; }
+.northstar-solution-pending { font-size: 13px; color: #8aa9bd; letter-spacing: .03em; }

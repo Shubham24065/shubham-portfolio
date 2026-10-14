@@ -65,7 +65,7 @@ export default function NorthstarRetailPage() {
           number: "07",
           title: "Current Development",
           content:
-            "Northstar Retail remains in progress. The current repository contains the operational database, seed and verification scripts, and six implemented business SQL tickets. Additional database and business scenarios will be added as the project develops.",
+            "Northstar Retail remains in progress. The current repository contains the operational database, seed and verification scripts, and a roadmap of fifteen business SQL tickets covering reporting, reconciliation, operations, and database support. Tickets are completed progressively as the project develops.",
         },
       ]}
     />
