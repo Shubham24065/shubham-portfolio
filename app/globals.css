@@ -2745,6 +2745,102 @@ body {
   }
 }
 
+/* NEW */
+
+/* Experience upgrade — append after existing Experience styles */
+.experience-card-button {
+  display: block;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.experience-card-button:focus-visible {
+  outline: 2px solid #43a5ff;
+  outline-offset: 4px;
+}
+.experience-explore {
+  display: block;
+  margin-top: 18px;
+  color: #48a8ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.experience-explore span { margin-left: 5px; }
+.experience-focus-card { min-height: 0; }
+.experience-focus-list { display: grid; gap: 0; margin-top: 35px; }
+.experience-focus-list > div {
+  display: flex;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(73,144,201,.2);
+}
+.experience-focus-list > div > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  height: 42px;
+  border: 1px solid rgba(41,149,255,.5);
+  border-radius: 50%;
+  color: #49a8ff;
+  font-size: 12px;
+}
+.experience-focus-list strong { color: #edf4fa; font-size: 16px; }
+.experience-focus-list p { margin: 8px 0 0; color: #a1b9d0; font-size: 13px; line-height: 1.6; }
+.experience-focus-note { margin: 28px 0 0; color: #8ca8c2; font-size: 13px; line-height: 1.7; }
+.experience-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0,6,14,.85);
+  backdrop-filter: blur(7px);
+}
+.experience-modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(85vh, 850px);
+  overflow-y: auto;
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid rgba(69,145,203,.45);
+  border-radius: 15px;
+  background: linear-gradient(145deg, #071f30, #05121f);
+  box-shadow: 0 24px 90px rgba(0,0,0,.55);
+}
+.experience-modal-close {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(78,142,193,.4);
+  border-radius: 8px;
+  background: transparent;
+  color: #eef7ff;
+  font-size: 28px;
+  cursor: pointer;
+}
+.experience-modal-close:focus-visible { outline: 2px solid #43a5ff; }
+.experience-modal-eyebrow { padding-right: 55px; color: #49a8ff; font-size: 12px; letter-spacing: .15em; }
+.experience-modal h2 { margin: 32px 0 8px; color: #f3f7fb; font-size: clamp(29px,4vw,44px); line-height: 1.15; }
+.experience-modal-period { margin: 0; color: #90b4d7; font-size: 15px; }
+.experience-modal-description { margin: 28px 0; color: #b6cadc; font-size: 16px; line-height: 1.7; }
+.experience-modal h3 { margin: 32px 0 17px; color: #42a6ff; font-size: 12px; letter-spacing: .16em; }
+.experience-modal-contributions { margin: 0; padding-left: 21px; color: #c2d2e1; }
+.experience-modal-contributions li { padding-left: 6px; margin-bottom: 13px; line-height: 1.65; }
+@media (max-width: 760px) {
+  .experience-modal-backdrop { padding: 12px; }
+  .experience-modal { max-height: 90vh; padding: 26px; }
+  .experience-modal-close { right: 14px; top: 14px; }
+}
+
+
 /* =========================================================
    CAPABILITIES
    ========================================================= */
@@ -7727,3 +7823,67 @@ body {
 .northstar-solution-link { display: inline-flex; align-items: center; gap: 14px; padding: 13px 19px; color: #eaf7ff; text-decoration: none; border: 1px solid #2a8dc3; border-radius: 6px; background: #092b40; font-size: 14px; font-weight: 600; transition: background .2s, border-color .2s; }
 .northstar-solution-link:hover, .northstar-solution-link:focus-visible { background: #0e3b56; border-color: #4dbbff; }
 .northstar-solution-pending { font-size: 13px; color: #8aa9bd; letter-spacing: .03em; }
+
+.northstar-execution-evidence {
+  margin-top: 30px;
+}
+
+.northstar-result-preview {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #22506a;
+  border-radius: 8px;
+  background: #04131e;
+  color: #8ccdf5;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.northstar-result-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.northstar-result-preview span {
+  display: block;
+  padding: 12px 16px;
+  font-size: 12px;
+}
+
+.northstar-image-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 5, 12, 0.94);
+}
+
+.northstar-image-viewer {
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+}
+
+.northstar-image-viewer img {
+  display: block;
+  max-width: 95vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.northstar-image-viewer button {
+  position: absolute;
+  right: 0;
+  top: -45px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}

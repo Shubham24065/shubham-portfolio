@@ -60,8 +60,19 @@ const solutionUrls: Partial<Record<Ticket["id"], string>> = {
     "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/tickets/SQL-008-repeat-customer-purchase-interval-analysis.sql",
 };
 
+const resultScreenshots: Record<string, string> = {
+  "SQL-001": "/projects/northstar/sql-001-results.png",
+  "SQL-002": "/projects/northstar/sql-002-results.png",
+  "SQL-003": "/projects/northstar/sql-003-results.png",
+  "SQL-004": "/projects/northstar/sql-004-results.png",
+};
+
 export default function NorthstarTicketsVisual() {
   const [selected, setSelected] = useState<Ticket | null>(null);
+
+  const [enlargedScreenshot, setEnlargedScreenshot] =
+  useState<string | null>(null);
+
 
   useEffect(() => {
     if (!selected) return;
@@ -122,6 +133,29 @@ export default function NorthstarTicketsVisual() {
             <p>{selected.request}</p>
             <h3>TECHNICAL FOCUS</h3>
             <p>{selected.focus}</p>
+
+            {selected.status === "COMPLETED" &&
+              resultScreenshots[selected.id] && (
+                <div className="northstar-execution-evidence">
+                  <h3>EXECUTION EVIDENCE</h3>
+
+                  <button
+                    type="button"
+                    className="northstar-result-preview"
+                    onClick={() =>
+                      setEnlargedScreenshot(resultScreenshots[selected.id])
+                    }
+                    aria-label={`Enlarge ${selected.id} SQL results`}
+                  >
+                    <img
+                      src={resultScreenshots[selected.id]}
+                      alt={`${selected.id} SQL Server query results`}
+                    />
+                    <span>Click to enlarge ↗</span>
+                  </button>
+                </div>
+            )}
+
             <div className="northstar-modal-actions">
               {selected.status === "COMPLETED" && (selected.solutionUrl || solutionUrls[selected.id]) ? (
                 <a
@@ -139,6 +173,31 @@ export default function NorthstarTicketsVisual() {
               )}
             </div>
           </section>
+        </div>
+      )}
+      {enlargedScreenshot && (
+        <div
+          className="northstar-image-backdrop"
+          onClick={() => setEnlargedScreenshot(null)}
+          role="presentation"
+        >
+          <div
+            className="northstar-image-viewer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="SQL execution results"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setEnlargedScreenshot(null)}
+              aria-label="Close screenshot"
+            >
+              ✕
+            </button>
+
+            <img src={enlargedScreenshot} alt="Enlarged SQL results" />
+          </div>
         </div>
       )}
     </>
