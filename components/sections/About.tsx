@@ -11,7 +11,7 @@ const principles = [
     icon: "◎",
     title: "Build with purpose",
     description:
-      "Technology should solve a real problem, not exist for its own sake.",
+      "Focus on requirements and practical outcomes.",
   },
   {
     number: "03",
@@ -235,11 +235,6 @@ export default function About() {
 
           </div>
         </div>
-
-        <div className="about-footer">
-          UNDERSTAND FIRST. BUILD WITH PURPOSE.
-        </div>
-
       </div>
     </section>
   );

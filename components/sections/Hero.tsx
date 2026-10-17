@@ -8,16 +8,11 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-content">
             <h1>
-                I build software,
-                <br />
-                data, and systems
-                <br />
-                around <span>real problems.</span>
+                Building practical solutions with <span>software, data, and SQL.</span>
             </h1>
 
             <p className="hero-description">
-                Building practical software and data-driven systems with a focus on
-                databases, application development, and real-world problem solving.
+                I work across databases, application development, and technical troubleshooting turning business requirements into reliable, usable solutions.
             </p>
 
             <div className="hero-actions">

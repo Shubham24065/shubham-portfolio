@@ -26,9 +26,7 @@ export default function ProjectsPage() {
         </h1>
 
         <p className="all-projects-description">
-          A closer look at the applications, database systems,
-          and practical solutions I&apos;ve built and continue
-          to develop.
+          A collection of applications and database projects demonstrating SQL, system design, technical problem-solving, and software development.
         </p>
       </div>
 

@@ -5,10 +5,10 @@ export default function NorthstarRetailPage() {
     <ProjectCaseStudy
       number="02"
       category="DATA / SQL"
-      status="In Progress"
+      status="Completed"
       title="Northstar Retail"
       headline="Turning business requests into practical SQL solutions."
-      description="The SQL Server database is structured around ten relational tables covering customers, employees, orders, order items, products, payments, shipments, categories, suppliers, and inventory. Primary and foreign keys connect customer activity, sales transactions, fulfillment, product catalog data, and inventory operations."
+      description="Northstar Retail is a simulated e-commerce business environment built around SQL Server. The project uses interconnected operational data and department-style business requests to demonstrate SQL analysis, reporting, data validation, and database problem-solving."
       role="SQL Analyst / Database Support"
       year="2026"
       technologies={[

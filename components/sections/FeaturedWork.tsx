@@ -17,14 +17,19 @@ type Project = {
 const projects: Project[] = [
   {
     number: "01",
-    category: "FULL STACK / WEB",
-    title: "Developer Portfolio",
+    title: "Northstar Retail",
+    category: "DATA / SQL",
     description:
-      "Production portfolio engineered as a full-stack web application to present software, data, systems, and technical work through structured, interactive case studies.",
-    status: "Active",
-    technologies: ["Next.js", "React", "TypeScript", "Resend", "Vercel"],
-    href: "/projects/developer-portfolio",
-    preview: "portfolio",
+      "SQL business operations simulation for a fictional e-commerce company, covering analytical reporting, customer insights, revenue reconciliation, and inventory risk analysis.",
+    status: "Completed",
+    technologies: [
+      "SQL Server",
+      "T-SQL",
+      "Data Analytics",
+      "Business Operations",
+    ],
+    href: "/projects/northstar-retail",
+    preview: "northstar",
   },
   {
     number: "02",
@@ -39,20 +44,16 @@ const projects: Project[] = [
   },
   {
     number: "03",
-    title: "Northstar Retail",
-    category: "DATA / SQL",
+    category: "FULL STACK / WEB",
+    title: "Developer Portfolio",
     description:
-      "SQL business operations simulation for a fictional e-commerce company, covering analytical reporting, customer insights, revenue reconciliation, and inventory risk analysis.",
-    status: "In Development",
-    technologies: [
-      "SQL Server",
-      "T-SQL",
-      "Data Analytics",
-      "Business Operations",
-    ],
-    href: "/projects/northstar-retail",
-    preview: "northstar",
+      "Production portfolio engineered as a full-stack web application to present software, data, systems, and technical work through structured, interactive case studies.",
+    status: "Active",
+    technologies: ["Next.js", "React", "TypeScript", "Resend", "Vercel"],
+    href: "/projects/developer-portfolio",
+    preview: "portfolio",
   },
+  
   /*{
     number: "04",
     title: "RideFlow",
@@ -87,6 +88,59 @@ function StatusBadge({ status }: { status: ProjectStatus }) {
       <span className="status-dot" />
       {status}
     </span>
+  );
+}
+
+
+/* =========================================================
+   HOTEL RESERVATION SYSTEM PREVIEW
+========================================================= */
+
+
+function HotelPreview() {
+  const features = [
+    "Guest Reservations",
+    "Billing & Payments",
+    "Loyalty & Reporting",
+  ];
+
+  return (
+    <div className="project-preview hotel-preview hotel-dashboard-preview">
+      <div className="hotel-preview-header">
+        <div>
+          <small>HOTEL MANAGEMENT SYSTEM</small>
+          <strong>Operations Overview</strong>
+        </div>
+
+        <span className="hotel-preview-indicator">JAVA</span>
+      </div>
+
+      <div className="hotel-dashboard-metrics">
+        <div>
+          
+          <span>KIOSK BOOKING</span>
+        </div>
+
+        <div>
+          
+          <span>ADMIN PORTAL</span>
+        </div>
+
+        <div>
+          
+          <span>REPORTING</span>
+        </div>
+      </div>
+
+      <div className="hotel-dashboard-features">
+        {features.map((feature) => (
+          <div key={feature}>
+            <span>{feature}</span>
+            <span className="hotel-feature-check">✓</span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -168,57 +222,6 @@ function PortfolioPreview() {
   );
 }
 
-/* =========================================================
-   HOTEL RESERVATION SYSTEM PREVIEW
-========================================================= */
-
-
-function HotelPreview() {
-  const features = [
-    "Guest Reservations",
-    "Billing & Payments",
-    "Loyalty & Reporting",
-  ];
-
-  return (
-    <div className="project-preview hotel-preview hotel-dashboard-preview">
-      <div className="hotel-preview-header">
-        <div>
-          <small>HOTEL MANAGEMENT SYSTEM</small>
-          <strong>Operations Overview</strong>
-        </div>
-
-        <span className="hotel-preview-indicator">JAVA</span>
-      </div>
-
-      <div className="hotel-dashboard-metrics">
-        <div>
-          
-          <span>KIOSK BOOKING</span>
-        </div>
-
-        <div>
-          
-          <span>ADMIN PORTAL</span>
-        </div>
-
-        <div>
-          
-          <span>REPORTING</span>
-        </div>
-      </div>
-
-      <div className="hotel-dashboard-features">
-        {features.map((feature) => (
-          <div key={feature}>
-            <span>{feature}</span>
-            <span className="hotel-feature-check">✓</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 /* =========================================================
    NORTHSTAR PREVIEW
@@ -343,9 +346,9 @@ function ProjectCardContent({ project }: { project: Project }) {
         <p className="work-card-description">{project.description}</p>
       </div>
 
+      {project.preview === "northstar" && <NorthstarPreview />}
       {project.preview === "portfolio" && <PortfolioPreview />}
       {project.preview === "hotel" && <HotelPreview />}
-      {project.preview === "northstar" && <NorthstarPreview />}
       {project.preview === "rideflow" && <RideFlowPreview />}
 
       <div className="work-card-bottom">
@@ -383,14 +386,12 @@ export default function FeaturedWork({ mode = "homepage" }: { mode?: "homepage" 
             <p className="section-kicker">Selected Work</p>
 
             <h2>
-              Projects that <span>solve real problems.</span>
+              Selected projects. <span>Practical solutions.</span>
             </h2>
           </div>
 
           <p className="work-intro">
-            A collection of software, data and systems projects built around
-            practical, real-world use cases. Each project represents a
-            different problem, domain and technology stack.
+            Explore projects covering SQL analysis, relational databases, application development, and technical problem-solving—from business investigations to complete application workflows.
           </p>
 
           <Link href="/projects" className="view-all-projects">
@@ -437,65 +438,7 @@ export default function FeaturedWork({ mode = "homepage" }: { mode?: "homepage" 
           })}
         </div>
 
-        {!isAllProjects && (
-        <>
-        <div className="work-utility-grid">
-          <a
-            href="https://github.com/Shubham24065"
-            target="_blank"
-            rel="noreferrer"
-            className="utility-card"
-          >
-            <div className="utility-icon">GH</div>
-
-            <div>
-              <strong>Visit my GitHub</strong>
-              <p>Explore code, experiments and ongoing work.</p>
-            </div>
-
-            <span className="utility-arrow">→</span>
-          </a>
-
-          <div className="utility-card">
-            <div className="utility-icon">▤</div>
-
-            <div>
-              <strong>Project documentation</strong>
-              <p>Detailed documentation and setup guides.</p>
-            </div>
-
-            <span className="utility-arrow">→</span>
-          </div>
-
-          <div className="utility-card">
-            <div className="utility-icon">◉</div>
-
-            <div>
-              <strong>Have an idea?</strong>
-              <p>
-                I&apos;m always open to interesting problems and collaborations.
-              </p>
-            </div>
-
-            <span className="utility-arrow">→</span>
-          </div>
-        </div>
-
-        <div className="work-footer-line">
-          <p>
-            <span />
-            DIFFERENT PROBLEMS. SAME APPROACH.
-          </p>
-
-          <p>
-            <span />
-            TURNING IDEAS
-            <br />
-            INTO REAL SOLUTIONS.
-          </p>
-        </div>
-        </>
-        )}
+        
       </div>
     </section>
   );

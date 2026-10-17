@@ -87,8 +87,8 @@ export default function Capabilities() {
             </p>
 
             <h2>
-              Technology is the toolkit.
-              <span>Solving real problems is the focus.</span>
+              Technical skills built through
+              <span>practical work.</span>
             </h2>
 
             <p className="capabilities-intro">

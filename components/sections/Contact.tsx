@@ -43,6 +43,16 @@ export default function Contact() {
   >("idle");
 
   const [statusMessage, setStatusMessage] = useState("");
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("shubham24065@gmail.com");
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("error");
+    }
+  };
 
   const handleChange = (
     event:
@@ -125,9 +135,7 @@ export default function Contact() {
           </h2>
 
           <p className="contact-intro">
-            I&apos;m always interested in conversations about software
-            development, databases, data, systems, and opportunities where
-            technology can solve real-world problems.
+            Interested in discussing a project, technical opportunity, or potential collaboration? Reach out through the form, send me an email, or connect with me on LinkedIn.
           </p>
 
           {/* CONTACT LINKS */}
@@ -163,6 +171,45 @@ export default function Contact() {
 <span>GitHub</span>
               <span className="contact-link-arrow">↗</span>
             </a>
+
+            <a
+              className="contact-link"
+              href="mailto:shubham24065@gmail.com"
+              aria-label="Email Shubham Kaushik"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="contact-email-svg"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2.5" y="5" width="19" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+              <span>Email</span>
+              <span className="contact-link-arrow">↗</span>
+            </a>
+          </div>
+
+          <div className="contact-email-copy-row">
+            <span className="contact-email-address">shubham24065@gmail.com</span>
+            <button
+              type="button"
+              className="contact-copy-button"
+              onClick={copyEmail}
+              aria-label="Copy email address"
+            >
+              {copyStatus === "copied" ? "✓ Copied" : "Copy email"}
+            </button>
+            {copyStatus === "error" && (
+              <span className="contact-copy-error" role="status">
+                Unable to copy. Please select the address above.
+              </span>
+            )}
           </div>
 
           {/* CONTACT TYPES */}
@@ -480,6 +527,25 @@ export default function Contact() {
       aria-hidden="true"
     >
       <path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.71 5.38-5.29 5.67.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
+    </svg>
+  </a>
+  <a
+    href="mailto:shubham24065@gmail.com"
+    aria-label="Email Shubham Kaushik"
+    title="Email Shubham Kaushik"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      className="footer-email-icon"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="2.5" y="5" width="19" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
     </svg>
   </a>
 </div>

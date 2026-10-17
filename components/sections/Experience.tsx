@@ -25,7 +25,7 @@ const experiences: ExperienceItem[] = [
     mark: "P",
     featured: true,
     description:
-      "Application support, mobile QA, issue investigation, and help desk operations for a live ride-share platform.",
+      "Application support & testing, mobile QA, issue investigation, and help desk operations for a live ride-share platform.",
     technologies: ["Application Support", "QA Testing", "HubSpot", "Jira", "Issue Tracking"],
     contributions: [
       "Investigated rider and driver support issues using HubSpot tickets, application records, and operational information.",
@@ -95,8 +95,7 @@ export default function Experience() {
             <h2>Work beyond<br /><span>the classroom.</span></h2>
           </div>
           <p className="experience-intro">
-            Experience across software development, application data, operations and support —
-            building a broader understanding of how technology works in real environments.
+            Experience across application development, technical support, quality assurance, and software operations—working with real applications, data workflows, and operational challenges.
           </p>
         </div>
 
