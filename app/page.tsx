@@ -4,6 +4,7 @@ import FeaturedWork from "@/components/sections/FeaturedWork";
 import Experience from "@/components/sections/Experience";
 import Capabilities from "@/components/sections/Capabilities";
 import About from "@/components/sections/About";
+import Recognition from "@/components/sections/Recognition";
 import Contact from "@/components/sections/Contact";
 
 
@@ -18,6 +19,7 @@ export default function Home() {
         <Experience />
         <Capabilities />
         <About />
+        <Recognition />
         <Contact />
       </main>
     </>

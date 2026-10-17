@@ -127,7 +127,7 @@ export default function Contact() {
         <div className="contact-left">
           <div className="contact-section-label">
             <span />
-            <p>06 / CONTACT</p>
+            <p>CONTACT</p>
           </div>
 
           <h2 className="contact-title">
