@@ -25,7 +25,7 @@ export default function Navbar() {
           </div>
 
           <a className="resume-button" href="/resume.pdf" download>
-            <span>Résumé</span>
+            <span>Resume</span>
             <span className="resume-icon">↓</span>
           </a>
         </div>

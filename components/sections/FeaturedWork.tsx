@@ -53,7 +53,7 @@ const projects: Project[] = [
     href: "/projects/northstar-retail",
     preview: "northstar",
   },
-  {
+  /*{
     number: "04",
     title: "RideFlow",
     category: "DATABASE ENGINEERING",
@@ -69,7 +69,7 @@ const projects: Project[] = [
     ],
     href: "/projects/rideflow",
     preview: "rideflow",
-  },
+  },*/
 ];
 
 function StatusBadge({ status }: { status: ProjectStatus }) {
@@ -369,10 +369,15 @@ function ProjectCardContent({ project }: { project: Project }) {
    FEATURED WORK SECTION
 ========================================================= */
 
-export default function FeaturedWork() {
+export default function FeaturedWork({ mode = "homepage" }: { mode?: "homepage" | "all" }) {
+  const isAllProjects = mode === "all";
   return (
-    <section id="work" className="featured-work-v2">
+    <section
+      id={isAllProjects ? undefined : "work"}
+      className={`featured-work-v2${isAllProjects ? " all-projects-work" : ""}`}
+    >
       <div className="work-container">
+        {!isAllProjects && (
         <div className="section-heading">
           <div>
             <p className="section-kicker">Selected Work</p>
@@ -392,6 +397,8 @@ export default function FeaturedWork() {
             View all projects <span>→</span>
           </Link>
         </div>
+
+        )}
 
         <div className="work-project-grid">
           {projects.map((project) => {
@@ -430,6 +437,8 @@ export default function FeaturedWork() {
           })}
         </div>
 
+        {!isAllProjects && (
+        <>
         <div className="work-utility-grid">
           <a
             href="https://github.com/Shubham24065"
@@ -485,6 +494,8 @@ export default function FeaturedWork() {
             INTO REAL SOLUTIONS.
           </p>
         </div>
+        </>
+        )}
       </div>
     </section>
   );
