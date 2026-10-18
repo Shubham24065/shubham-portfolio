@@ -3,7 +3,7 @@ import ProjectCaseStudy from "@/components/projects/ProjectCaseStudy";
 export default function DeveloperPortfolioPage() {
   return (
     <ProjectCaseStudy
-      number="01"
+      number="03"
       category="FULL STACK / WEB"
       status="Active"
       title="Developer Portfolio"

@@ -3,7 +3,7 @@ import ProjectCaseStudy from "@/components/projects/ProjectCaseStudy";
 export default function NorthstarRetailPage() {
   return (
     <ProjectCaseStudy
-      number="02"
+      number="01"
       category="DATA / SQL"
       status="Completed"
       title="Northstar Retail"
@@ -63,9 +63,9 @@ export default function NorthstarRetailPage() {
         },
         {
           number: "07",
-          title: "Current Development",
+          title: "Project Completion & Outcomes",
           content:
-            "Northstar Retail remains in progress. The current repository contains the operational database, seed and verification scripts, and a roadmap of fifteen business SQL tickets covering reporting, reconciliation, operations, and database support. Tickets are completed progressively as the project develops.",
+            "Northstar Retail is a completed SQL business operations simulation built using Microsoft SQL Server. The project includes a relational database, schema creation, seed and verification scripts, and fifteen business-focused SQL tickets addressing revenue reconciliation, sales reporting, inventory management, customer analysis, and database optimization. It demonstrates practical SQL development, database design, analytical problem-solving, and real-world business support workflows.",
         },
       ]}
     />

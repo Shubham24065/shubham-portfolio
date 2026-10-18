@@ -405,7 +405,7 @@ export default function FeaturedWork({ mode = "homepage" }: { mode?: "homepage" 
           {projects.map((project) => {
             const cardClasses = [
               "work-project-card",
-              project.number === "01" ? "primary-project" : "",
+              project.number === "03" ? "primary-project" : "",
               project.href
                 ? "project-card-clickable"
                 : "project-card-disabled",

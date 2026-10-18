@@ -26,11 +26,13 @@ const experiences: ExperienceItem[] = [
     featured: true,
     description:
       "Application support & testing, mobile QA, issue investigation, and help desk operations for a live ride-share platform.",
-    technologies: ["Application Support", "QA Testing", "HubSpot", "Jira", "Issue Tracking"],
+    technologies: ["Operational Data Management","Data Validation", "Application Support", "QA Testing", "HubSpot", "Jira", "Issue Tracking"],
     contributions: [
-      "Investigated rider and driver support issues using HubSpot tickets, application records, and operational information.",
-      "Tested mobile application workflows, documented defects, and coordinated technical escalations through Jira and internal teams.",
-      "Supported help desk processes and trained incoming co-op team members on ticketing and customer-support workflows.",
+      "• Managed and reviewed rider and driver records, investigating data inconsistencies, verifying information accuracy, and supporting day-to-day platform operations.",
+      "• Investigated application and customer-reported issues using HubSpot Service Hub, rider and driver information, and operational records to identify problems and coordinate resolutions.",
+      "• Performed functional testing of mobile application workflows, reproduced defects, documented findings, and tracked technical issues through Jira in collaboration with development and QA teams.",
+      "• Analyzed rider and driver operational information to support issue investigation, onboarding activities, and data-driven operational decisions.",
+      "• Trained incoming co-op team members on HubSpot ticket management, data handling procedures, customer support workflows, and issue escalation."
     ],
   },
   {
@@ -43,30 +45,41 @@ const experiences: ExperienceItem[] = [
     featured: false,
     description:
       "Application development with FlutterFlow, Firebase, and Firestore-backed data workflows.",
-    technologies: ["FlutterFlow", "Firebase", "Firestore", "Application Development", "Data Management"],
+    technologies: ["FlutterFlow", "Firebase", "Cloud Firestore", "Full-Stack Development", "NoSQL", "Backend Integration", "Debugging"],
     contributions: [
-      "Contributed to application development using FlutterFlow and Firebase.",
-      "Worked with Firestore-backed application data, including data storage and retrieval within application workflows.",
-      "Supported functionality connected to backend services and application data.",
+      "• Developed and maintained application features using FlutterFlow, integrating frontend components with Firebase backend services to support end-to-end functionality.",
+      "• Designed and managed Cloud Firestore collections and documents, implementing data storage, retrieval, and update operations to support application workflows.",
+      "• Built and configured data-driven application workflows, connecting user interfaces with Firestore queries and backend functionality.",
+      "• Tested, debugged, and resolved application issues across frontend interfaces, backend integrations, and database operations to improve reliability and user experience.",
     ],
   },
   {
-    id: "vosyn",
-    period: "May 2025 – Aug 2025",
-    role: "Frontend Developer Intern",
-    company: "Vosyn",
-    type: "Summer Internship",
-    mark: "V",
-    featured: false,
-    description:
-      "Frontend development and integration of data-driven application interfaces.",
-    technologies: ["Frontend Development", "Data Integration", "APIs", "Git", "Application Development"],
-    contributions: [
-      "Contributed to frontend application development in a collaborative environment.",
-      "Worked on user interfaces that present structured application data.",
-      "Supported integration of frontend components with backend services.",
-    ],
-  },
+  id: "vosyn",
+  period: "May 2025 – Aug 2025",
+  role: "Frontend Developer Intern",
+  company: "Vosyn",
+  type: "Summer Internship",
+  mark: "V",
+  featured: false,
+  description:
+    "Frontend development and integration of data-driven application interfaces.",
+  technologies: [
+    "React",
+    "Frontend Development",
+    "Component Development",
+    "APIs",
+    "Git",
+    "Application Testing",
+    "Debugging",
+    "UI Development",
+  ],
+  contributions: [
+    "• Developed and implemented new frontend components using React, contributing to application features, user interface functionality, and overall usability.",
+    "• Debugged and resolved frontend issues by investigating component behaviour, identifying errors, and improving application functionality.",
+    "• Worked with structured application data to support dynamic content rendering and integration between frontend components and application services.",
+    "• Collaborated with development team members to test, refine, and maintain React components, ensuring consistency and reliability across application interfaces.",
+  ],
+},
 ];
 
 export default function Experience() {
