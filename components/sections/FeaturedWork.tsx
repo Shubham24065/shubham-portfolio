@@ -437,8 +437,6 @@ export default function FeaturedWork({ mode = "homepage" }: { mode?: "homepage" 
             );
           })}
         </div>
-
-        
       </div>
     </section>
   );

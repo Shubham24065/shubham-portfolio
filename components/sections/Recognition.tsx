@@ -41,15 +41,15 @@ export default function Recognition() {
             <article className="recognition-card" key={item.title}>
               <div className="recognition-card-top">
                 
-<div className="recognition-badge">
-  <Image
-    src="/images/energy-hackathon-finalist.png"
-    alt="Seneca Polytechnic 2026 Energy Hackathon Finalist badge"
-    width={110}
-    height={110}
-    className="recognition-badge-image"
-  />
-</div>
+                <div className="recognition-badge">
+                <Image
+                    src="/images/energy-hackathon-finalist.png"
+                    alt="Seneca Polytechnic 2026 Energy Hackathon Finalist badge"
+                    width={110}
+                    height={110}
+                    className="recognition-badge-image"
+                />
+                </div>
 
 
                 <div className="recognition-meta">
