@@ -25,10 +25,10 @@ const tickets: Ticket[] = [
   { id: "SQL-09", title: "Regional Sales Performance Analysis", department: "MANAGEMENT", status: "COMPLETED", request: "Compare completed-order sales and customer activity across provinces.", focus: "COUNT(DISTINCT), GROUP BY, revenue share, provincial ranking" },
   { id: "SQL-10", title: "Product Ranking Within Categories", department: "MERCHANDISING", status: "COMPLETED", request: "Rank products by revenue within each category and identify the top three performers.", focus: "ROW_NUMBER(), RANK(), DENSE_RANK(), PARTITION BY" },
   { id: "SQL-11", title: "Inventory Restocking Stored Procedure", department: "OPERATIONS", status: "COMPLETED", request: "Build a reusable, parameterized stored procedure for identifying inventory at or below reorder levels.", focus: "CREATE PROCEDURE, parameters, validation, inventory shortage" },
-  { id: "SQL-12", title: "Safe Order Processing Transaction", department: "DATABASE OPERATIONS", status: "OPEN", request: "Process orders, inventory changes, and payment records atomically, rolling back all changes if a step fails.", focus: "BEGIN TRANSACTION, COMMIT, ROLLBACK, TRY/CATCH, ACID" },
-  { id: "SQL-13", title: "Inventory Audit & Change Tracking", department: "OPERATIONS", status: "OPEN", request: "Record old and new inventory quantities automatically, including updates affecting multiple rows.", focus: "CREATE TRIGGER, inserted/deleted, set-based audit logging" },
-  { id: "SQL-14", title: "Management Order Summary View", department: "MANAGEMENT", status: "OPEN", request: "Create a reusable view combining order, customer, payment, and shipment information for reporting.", focus: "CREATE VIEW, joins, aggregation, avoiding duplicate orders" },
-  { id: "SQL-15", title: "Query Performance & Index Optimization", department: "DATABASE SUPPORT", status: "OPEN", request: "Investigate a representative reporting query and document performance before and after an appropriate optimization.", focus: "Execution plans, indexes, SARGable predicates, performance comparison" },
+  { id: "SQL-12", title: "Safe Order Processing Transaction", department: "DATABASE OPERATIONS", status: "COMPLETED", request: "Process orders, inventory changes, and payment records atomically, rolling back all changes if a step fails.", focus: "BEGIN TRANSACTION, COMMIT, ROLLBACK, TRY/CATCH, ACID" },
+  { id: "SQL-13", title: "Inventory Audit & Change Tracking", department: "OPERATIONS", status: "COMPLETED", request: "Record old and new inventory quantities automatically, including updates affecting multiple rows.", focus: "CREATE TRIGGER, inserted/deleted, set-based audit logging" },
+  { id: "SQL-14", title: "Management Order Summary View", department: "MANAGEMENT", status: "COMPLETED", request: "Create a reusable view combining order, customer, payment, and shipment information for reporting.", focus: "CREATE VIEW, joins, aggregation, avoiding duplicate orders" },
+  { id: "SQL-15", title: "Query Performance & Index Optimization", department: "DATABASE SUPPORT", status: "COMPLETED", request: "Investigate a representative reporting query and document performance before and after an appropriate optimization.", focus: "Execution plans, indexes, SARGable predicates, performance comparison" },
 ];
 
 // Add the exact GitHub URL for each implemented .sql file here.
@@ -67,6 +67,42 @@ const solutionUrls: Partial<Record<Ticket["id"], string>> = {
 
     "SQL-11":
     "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/stored-procedures/SQL-011-inventory-restocking-report.sql",
+
+    "SQL-12":
+    "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/transactions/SQL-012-safe-order-processing-transaction.sql",
+
+    "SQL-13":
+    "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/triggers/SQL-013-inventory-audit-change-tracking.sql",
+
+    "SQL-14":
+    "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/views/SQL-014-management-order-summary-view.sql",
+
+    "SQL-15":
+    "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/performance/SQL-015-query-performance-index-optimization.sql",
+};
+
+// Add test-case GitHub URLs here only after those files are committed.
+const testUrls: Partial<Record<Ticket["id"], string>> = {
+  "SQL-11":
+  "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/tests/SQL-011-restocking-procedure-tests.sql",
+
+  "SQL-12":
+  "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/tests/SQL-012-order-transaction-tests.sql",
+
+  "SQL-13":
+  "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/tests/SQL-013-inventory-audit-tests.sql",
+
+  "SQL-14":
+  "https://github.com/Shubham24065/Northstar-SQL-Business-Simulation/blob/main/tests/SQL-014-management-view-tests.sql"
+
+};
+
+const validationOutcomes: Partial<Record<Ticket["id"], string>> = {
+  "SQL-11": "Executed the restocking procedure and confirmed that the report identifies out-of-stock and below-reorder-level inventory across warehouses.",
+  "SQL-12": "Successfully processed order #153 within a test transaction. The order changed to Completed, and ROLLBACK restored its original Processing status.",
+  "SQL-13": "Verified that an inventory decrease from 33 to 23 automatically generated an audit record recording the previous quantity, new quantity, and change of -10.",
+  "SQL-14": "Validated that the view returns 5,000 rows for 5,000 distinct orders and reused it to summarize completed-order revenue by province.",
+  "SQL-15": "The nonclustered index reduced logical reads on Orders from 28 to 8 (71.4%) and changed the plan from a clustered index scan with a sort to a nonclustered index seek. In this single run, elapsed time was 184 ms before and 191 ms after; no elapsed-time improvement is claimed.",
 };
 
 const resultScreenshots: Record<string, string> = {
@@ -74,7 +110,19 @@ const resultScreenshots: Record<string, string> = {
   "SQL-02": "/projects/northstar/sql-002-results.png",
   "SQL-03": "/projects/northstar/sql-003-results.png",
   "SQL-04": "/projects/northstar/sql-004-results.png",
+  "SQL-10": "/projects/northstar/sql-10-results.png",
+  "SQL-11": "/projects/northstar/sql-11-test-results.png",
+  "SQL-12": "/projects/northstar/sql-12-test-results.png",
+  "SQL-13": "/projects/northstar/sql-13-test-results.png",
+  "SQL-14": "/projects/northstar/sql-14-test-results.png",
 };
+
+const performanceScreenshots = [
+  { label: "Before index · Messages", src: "/projects/northstar/SQL-015-before-index-messages.png", detail: "28 logical reads · 184 ms elapsed" },
+  { label: "After index · Messages", src: "/projects/northstar/SQL-015-after-index-messages.png", detail: "8 logical reads · 191 ms elapsed" },
+  { label: "Before index · Execution plan", src: "/projects/northstar/SQL-015-before-index-plan.png", detail: "Clustered Index Scan + Sort" },
+  { label: "After index · Execution plan", src: "/projects/northstar/SQL-015-after-index-plan.png", detail: "Nonclustered Index Seek" },
+];
 
 export default function NorthstarTicketsVisual() {
   const [selected, setSelected] = useState<Ticket | null>(null);
@@ -165,6 +213,50 @@ export default function NorthstarTicketsVisual() {
                 </div>
             )}
 
+            {selected.id === "SQL-15" && selected.status === "COMPLETED" && (
+              <div className="northstar-execution-evidence">
+                <h3>EXECUTION EVIDENCE · BEFORE VS. AFTER</h3>
+                <p style={{ marginBottom: "16px" }}>
+                  Compare SQL Server I/O statistics and actual execution plans before and after adding the index.
+                </p>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "16px" }}>
+                  {performanceScreenshots.map((shot) => (
+                    <div key={shot.src} style={{ minWidth: 0 }}>
+                      <h4 style={{ margin: "0 0 10px", fontSize: "0.95rem", color: "#d8edf9" }}>{shot.label}</h4>
+                      <button
+                        type="button"
+                        className="northstar-result-preview"
+                        onClick={() => setEnlargedScreenshot(shot.src)}
+                        aria-label={`Enlarge ${shot.label}`}
+                        style={{ width: "100%", display: "block", textAlign: "left" }}
+                      >
+                        <img src={shot.src} alt={`SQL-015 ${shot.label}`} style={{ width: "100%", height: "130px", objectFit: "contain", objectPosition: "left center" }} />
+                        <span>Click to enlarge ↗</span>
+                      </button>
+                      <p style={{ fontSize: "0.85rem", margin: "8px 0 0" }}>{shot.detail}</p>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ overflowX: "auto", marginTop: "22px" }}>
+                  <table style={{ width: "100%", borderCollapse: "collapse", color: "inherit", fontSize: "0.9rem" }}>
+                    <thead><tr><th style={{ textAlign: "left", padding: "10px" }}>Metric</th><th style={{ textAlign: "left", padding: "10px" }}>Before</th><th style={{ textAlign: "left", padding: "10px" }}>After</th></tr></thead>
+                    <tbody>
+                      <tr><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>Logical reads</td><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>28</td><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>8 (−71.4%)</td></tr>
+                      <tr><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>CPU time</td><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>15 ms</td><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>0 ms reported</td></tr>
+                      <tr><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>Elapsed time</td><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>184 ms</td><td style={{ padding: "10px", borderTop: "1px solid #29485b" }}>191 ms</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {selected.status === "COMPLETED" && validationOutcomes[selected.id] && (
+              <div className="northstar-execution-evidence">
+                <h3>VALIDATION OUTCOME</h3>
+                <p>{validationOutcomes[selected.id]}</p>
+              </div>
+            )}
+
             <div className="northstar-modal-actions">
               {selected.status === "COMPLETED" && (selected.solutionUrl || solutionUrls[selected.id]) ? (
                 <a
@@ -179,6 +271,16 @@ export default function NorthstarTicketsVisual() {
                 <span className="northstar-solution-pending">
                   {selected.status === "OPEN" ? "Solution pending" : "SQL file link coming soon"}
                 </span>
+              )}
+              {selected.status === "COMPLETED" && testUrls[selected.id] && (
+                <a
+                  className="northstar-solution-link"
+                  href={testUrls[selected.id]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Test Cases <span aria-hidden="true">↗</span>
+                </a>
               )}
             </div>
           </section>

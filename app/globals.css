@@ -7821,7 +7821,7 @@ body {
 .northstar-modal .northstar-modal-note { margin-top: 38px; font-size: 12px; opacity: .7; }
 
 /* Ticket solution link */
-.northstar-modal-actions { margin-top: 34px; padding-top: 24px; border-top: 1px solid #22506a; display: flex; align-items: center; }
+.northstar-modal-actions { margin-top: 34px; padding-top: 24px; border-top: 1px solid #22506a; display: flex; align-items: center; gap: 16px; }
 .northstar-solution-link { display: inline-flex; align-items: center; gap: 14px; padding: 13px 19px; color: #eaf7ff; text-decoration: none; border: 1px solid #2a8dc3; border-radius: 6px; background: #092b40; font-size: 14px; font-weight: 600; transition: background .2s, border-color .2s; }
 .northstar-solution-link:hover, .northstar-solution-link:focus-visible { background: #0e3b56; border-color: #4dbbff; }
 .northstar-solution-pending { font-size: 13px; color: #8aa9bd; letter-spacing: .03em; }
