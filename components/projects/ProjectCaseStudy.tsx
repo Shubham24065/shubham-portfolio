@@ -2,6 +2,8 @@ import NorthstarERD from "./NorthstarERD";
 import HotelShowcaseVisual from "./HotelShowcaseVisual";
 import NorthstarTicketsVisual from "./NorthstarTicketsVisual";
 import Link from "next/link";
+import Image from "next/image";
+import CaseStudyGallery from "./CaseStudyGallery";
 
 
 
@@ -12,9 +14,12 @@ export type ProjectSection = {
   title: string;
 
   content: string;
+  images?: { src: string; alt: string; caption: string }[];
 
   visual?:
 
+    | "portfolio-architecture"
+    | "portfolio-contact-flow"
     | "architecture"
 
     | "deployment"
@@ -617,6 +622,108 @@ function HotelDatabaseVisual() {
   );
 }
 
+
+function PortfolioArchitectureVisual() {
+  return (
+    <div className="diagram" aria-label="Portfolio application architecture">
+      <div className="diagramHeading">
+        APPLICATION ARCHITECTURE
+        <span>RENDERING &amp; SERVER WORKFLOWS</span>
+      </div>
+
+      <div className="architectureFlow">
+        <div className="centerNode">
+          <small>01 / CLIENT</small>
+          <strong>Browser / Visitor</strong>
+          <span>Navigation, page views and contact form</span>
+        </div>
+
+        <div className="flowConnector" aria-hidden="true" />
+
+        <div className="centerNode">
+          <small>02 / APPLICATION</small>
+          <strong>Next.js · React · TypeScript</strong>
+          <span>App Router, components and server routes</span>
+        </div>
+
+        <div className="splitConnector" aria-hidden="true">
+          <div className="splitStem" />
+          <div className="splitHorizontal" />
+          <div className="splitEnds">
+            <div className="splitEnd" />
+            <div className="splitEnd" />
+          </div>
+        </div>
+
+        <div className="branches">
+          <div className="branch">
+            <div className="node">
+              <small>PAGE DELIVERY</small>
+              <strong>Homepage &amp; Case Studies</strong>
+              <span>
+                Project routes, visualizations and navigation
+              </span>
+            </div>
+          </div>
+
+          <div className="branch">
+            <div className="node">
+              <small>SERVER WORKFLOW</small>
+              <strong>POST /api/contact</strong>
+              <span>
+                Input validation and email construction
+              </span>
+            </div>
+
+            <div className="flowConnector" aria-hidden="true" />
+
+            <div className="node">
+              <small>EMAIL DELIVERY</small>
+              <strong>Resend API</strong>
+              <span>
+                Server-side integration using a private API key
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="architectureFooter">
+        <div className="footerItem">
+          <span className="footerDot" />
+          <span>Hosted on Vercel</span>
+        </div>
+        <div className="footerDivider" />
+        <div className="footerItem">
+          <span className="footerDot" />
+          <span>Web Analytics · Page activity</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PortfolioContactFlowVisual() {
+  const steps = [
+    ["01", "Visitor submits", "React contact form"],
+    ["02", "Server validates", "Required fields, limits, spam check"],
+    ["03", "Resend delivers", "Server-side email service"],
+    ["04", "UI responds", "Success or error feedback"],
+  ];
+  return (
+    <div className={"diagram"} aria-label="Contact form submission workflow">
+      <div className={"diagramHeading"}>CONTACT SUBMISSION <span>REQUEST → VALIDATION → DELIVERY → FEEDBACK</span></div>
+      <div className={"steps"}>
+        {steps.map(([number, title, detail]) => (
+          <div className={"node"} key={number}>
+            <small>{number}</small><strong>{title}</strong><span>{detail}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function SectionVisual({
 
   visual,
@@ -626,6 +733,9 @@ function SectionVisual({
   visual?: ProjectSection["visual"];
 
 }) {
+
+  if (visual === "portfolio-architecture") return <PortfolioArchitectureVisual />;
+  if (visual === "portfolio-contact-flow") return <PortfolioContactFlowVisual />;
 
   if (visual === "architecture") {
 
@@ -953,6 +1063,9 @@ export default function ProjectCaseStudy({
 
 
 
+                {section.images && section.images.length > 0 && (
+                  <CaseStudyGallery images={section.images} />
+                )}
                 <SectionVisual visual={section.visual} />
 
               </div>
