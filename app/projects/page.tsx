@@ -4,9 +4,9 @@ import Link from "next/link";
 import FeaturedWork from "@/components/sections/FeaturedWork";
 
 export const metadata: Metadata = {
-  title: "Projects | Shubham Kaushik",
+  title: "Projects | Shubham Sharma",
   description:
-    "Explore software development, database, and data projects by Shubham Kaushik.",
+    "Explore software development, database, and data projects by Shubham Sharma.",
 };
 
 export default function ProjectsPage() {

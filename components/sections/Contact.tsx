@@ -175,7 +175,7 @@ export default function Contact() {
             <a
               className="contact-link"
               href="mailto:shubham24065@gmail.com"
-              aria-label="Email Shubham Kaushik"
+              aria-label="Email Shubham Sharma"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -494,7 +494,7 @@ export default function Contact() {
 
       <footer className="contact-footer">
         <div className="contact-footer-brand">
-          <strong>SHUBHAM KAUSHIK</strong>
+          <strong>SHUBHAM SHARMA</strong>
           <span>SOFTWARE · DATA · SYSTEMS · REAL IMPACT</span>
         </div>
 
@@ -531,8 +531,8 @@ export default function Contact() {
   </a>
   <a
     href="mailto:shubham24065@gmail.com"
-    aria-label="Email Shubham Kaushik"
-    title="Email Shubham Kaushik"
+    aria-label="Email Shubham Sharma"
+    title="Email Shubham Sharma"
   >
     <svg
       viewBox="0 0 24 24"
@@ -551,8 +551,8 @@ export default function Contact() {
 </div>
 
         <div className="contact-footer-meta">
-          <span>© 2026 Shubham Kaushik</span>
-          <span>Designed &amp; built by Shubham Kaushik</span>
+          <span>© 2026 Shubham Sharma</span>
+          <span>Designed &amp; built by Shubham Sharma</span>
         </div>
       </footer>
     </section>

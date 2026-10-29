@@ -152,7 +152,7 @@ export async function POST(request: Request) {
               color: #64748b;
             "
           >
-            Sent from shubhamkaushikportfolio.vercel.app
+            Sent from shubhamsharmaportfolio.vercel.app
           </p>
         </div>
       `,

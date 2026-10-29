@@ -12,7 +12,7 @@ export default function Navbar() {
     <header className="site-header">
       <nav className="navbar">
         <Link href="/" className="brand">
-          SHUBHAM KAUSHIK
+          SHUBHAM SHARMA
         </Link>
 
         <div className="navbar-right">

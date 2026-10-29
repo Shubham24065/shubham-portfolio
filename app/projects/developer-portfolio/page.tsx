@@ -31,7 +31,7 @@ export default function DeveloperPortfolioPage() {
         "Git / GitHub",
       ]}
       github="https://github.com/Shubham24065/shubham-portfolio"
-      live="https://shubhamkaushikportfolio.vercel.app/"
+      live="https://shubhamsharmaportfolio.vercel.app/"
       sections={[
         {
           number: "01",
@@ -80,7 +80,7 @@ export default function DeveloperPortfolioPage() {
           title: "Metadata, Analytics & Discoverability",
           content:
             "Site-wide metadata defines a descriptive title, page description, canonical configuration, and Open Graph and Twitter metadata. The project also integrates Vercel Web Analytics through the root layout, allowing page views and aggregated visitor activity to be reviewed privately. Analytics is used to understand traffic and page interest, not to identify individual visitors.",
-          images: [
+            images: [
             { src: "/projects/developer-portfolio/portfolio-vercel-analytics.png", alt: "Northstar Retail SQL ticket grid within the portfolio case study", caption: "05 / Web Analytics — privacy-focused traffic monitoring and page-level engagement insights through Vercel." },
           ],
         },

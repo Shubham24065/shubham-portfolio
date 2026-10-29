@@ -155,10 +155,10 @@ function PortfolioPreview() {
 
       <div className="portfolio-preview-header">
         <div className="portfolio-preview-brand">
-          <span className="portfolio-preview-brand-mark">SK</span>
+          <span className="portfolio-preview-brand-mark">SS</span>
 
           <div>
-            <strong>SHUBHAM KAUSHIK</strong>
+            <strong>SHUBHAM SHARMA</strong>
             <small>SOFTWARE · DATA · SYSTEMS</small>
           </div>
         </div>

@@ -14,23 +14,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://shubhamkaushikportfolio.vercel.app";
+const siteUrl = "https://shubhamsharmaportfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Shubham Kaushik | Software Developer",
-    template: "%s | Shubham Kaushik",
+    default: "Shubham Sharma | Software Developer",
+    template: "%s | Shubham Sharma",
   },
 
   description:
-    "Explore the portfolio of Shubham Kaushik, featuring software development, SQL, database systems, data analysis, and practical technology projects.",
+    "Explore the portfolio of Shubham Sharma, featuring software development, SQL, database systems, data analysis, and practical technology projects.",
 
-  applicationName: "Shubham Kaushik Portfolio",
+  applicationName: "Shubham Sharma Portfolio",
 
   keywords: [
-    "Shubham Kaushik",
+    "Shubham Sharma",
     "Software Developer",
     "SQL Developer",
     "Database Development",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
 
-  authors: [{ name: "Shubham Kaushik" }],
-  creator: "Shubham Kaushik",
+  authors: [{ name: "Shubham Sharma" }],
+  creator: "Shubham Sharma",
 
   alternates: {
     canonical: "/",
@@ -52,15 +52,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     url: siteUrl,
-    siteName: "Shubham Kaushik Portfolio",
-    title: "Shubham Kaushik | Software Developer",
+    siteName: "Shubham Sharma Portfolio",
+    title: "Shubham Sharma | Software Developer",
     description:
-      "Explore software development, SQL, database systems, data analysis, and practical technology projects by Shubham Kaushik.",
+      "Explore software development, SQL, database systems, data analysis, and practical technology projects by Shubham Sharma.",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Shubham Kaushik | Software Developer",
+    title: "Shubham Sharma | Software Developer",
     description:
       "Software development, SQL, database systems, and practical technology projects.",
   },
